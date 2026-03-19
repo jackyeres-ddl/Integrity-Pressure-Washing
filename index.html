@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Integrity Pressure Washing | Power Wash Pros</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --blue:#0072C6;--darkblue:#004f8c;--deepblue:#001f3f;
+  --green:#4CBB17;--gold:#FFD700;--white:#fff;--gray:#f0f4fa;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:#1a1a2e;overflow-x:hidden;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:#001f3f;}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:999;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(0,20,50,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,215,0,.15);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.logo-shield{width:38px;height:38px;background:linear-gradient(135deg,var(--blue),var(--darkblue));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 0 12px rgba(0,114,198,.5);}
+.logo-text{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.05rem;color:#fff;letter-spacing:.5px;}
+.logo-text span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:.3s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:linear-gradient(135deg,var(--green),#39a00f);color:#fff;padding:10px 24px;border-radius:30px;font-weight:700;text-decoration:none;font-size:.85rem;letter-spacing:.5px;text-transform:uppercase;box-shadow:0 4px 14px rgba(76,187,23,.35);transition:.25s;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(76,187,23,.5);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000e24;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#000e24 0%,#001f3f 40%,#003366 70%,#0050a0 100%);}
+/* Animated grid lines */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,114,198,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(0,114,198,.12) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite;}
+@keyframes gridMove{0%{background-position:0 0;}100%{background-position:60px 60px;}}
+/* Glowing orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,#0072C6,transparent);top:-100px;right:-100px;animation:pulse 8s ease-in-out infinite;}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,#004f8c,transparent);bottom:-80px;left:-80px;animation:pulse 10s ease-in-out infinite reverse;}
+.orb3{width:300px;height:300px;background:radial-gradient(circle,#FFD700,transparent);top:40%;left:30%;opacity:.08;animation:pulse 6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+/* Water drops */
+.drops-wrap{position:absolute;inset:0;pointer-events:none;}
+.hdrop{position:absolute;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);}
+.hdrop:nth-child(1){width:90px;height:115px;top:18%;left:6%;animation:floatD 7s ease-in-out infinite;}
+.hdrop:nth-child(2){width:55px;height:72px;top:65%;left:4%;animation:floatD 9s ease-in-out infinite 1.5s;}
+.hdrop:nth-child(3){width:75px;height:95px;top:22%;right:7%;animation:floatD 8s ease-in-out infinite .5s;}
+.hdrop:nth-child(4){width:45px;height:58px;top:72%;right:9%;animation:floatD 6s ease-in-out infinite 2s;}
+.hdrop:nth-child(5){width:35px;height:45px;top:45%;left:14%;animation:floatD 10s ease-in-out infinite 3s;}
+@keyframes floatD{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-22px) rotate(5deg);}}
+.hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:140px 20px 80px;text-align:center;}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:var(--gold);font-size:.78rem;font-weight:700;padding:8px 20px;border-radius:40px;margin-bottom:28px;letter-spacing:1.5px;text-transform:uppercase;}
+.hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(2.6rem,6.5vw,5rem);color:#fff;line-height:1.05;margin-bottom:24px;}
+.hero h1 .line2{background:linear-gradient(90deg,var(--gold),#ffa500,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% auto;animation:shimmer 3s linear infinite;}
+@keyframes shimmer{0%{background-position:0% center;}100%{background-position:200% center;}}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,.72);max-width:580px;margin:0 auto 44px;line-height:1.8;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.btn-glow{background:linear-gradient(135deg,var(--green),#2d9a0f);color:#fff;padding:18px 40px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;transition:.3s;box-shadow:0 0 0 0 rgba(76,187,23,.5);letter-spacing:.5px;position:relative;overflow:hidden;}
+.btn-glow::before{content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:rgba(255,255,255,.15);transform:skewX(-20deg);transition:.5s;}
+.btn-glow:hover::before{left:120%;}
+.btn-glow:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(76,187,23,.6),0 8px 24px rgba(76,187,23,.4);}
+.btn-outline{background:transparent;color:#fff;padding:18px 40px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid rgba(255,255,255,.35);transition:.3s;letter-spacing:.5px;backdrop-filter:blur(4px);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);background:rgba(255,215,0,.06);}
+.hero-phone{font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:900;color:var(--gold);margin-bottom:52px;text-shadow:0 0 20px rgba(255,215,0,.4);}
+.hero-phone a{color:inherit;text-decoration:none;}
+/* Stat bar */
+.stat-bar{display:flex;justify-content:center;gap:0;flex-wrap:wrap;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;backdrop-filter:blur(10px);background:rgba(255,255,255,.05);}
+.stat-item{flex:1;min-width:160px;padding:22px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.2rem;background:linear-gradient(135deg,var(--gold),#ffa500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-label{color:rgba(255,255,255,.6);font-size:.8rem;margin-top:4px;letter-spacing:.5px;text-transform:uppercase;}
+/* Scroll indicator */
+.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:.75rem;letter-spacing:1px;text-transform:uppercase;}
+.scroll-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:bounce 1.5s ease-in-out infinite;}
+@keyframes bounce{0%,100%{opacity:.3;transform:translateY(0);}50%{opacity:1;transform:translateY(6px);}}
+
+/* ── TRUSTED BANNER ── */
+.trust-banner{background:linear-gradient(90deg,var(--gold),#ffa500,var(--gold));padding:14px 20px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;color:#000;letter-spacing:1px;background-size:200% auto;animation:shimmer 4s linear infinite;}
+
+/* ── SECTION BASE ── */
+section{padding:96px 20px;}
+.s-inner{max-width:1140px;margin:0 auto;}
+.s-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(0,114,198,.1);border:1px solid rgba(0,114,198,.25);color:var(--blue);font-weight:700;font-size:.75rem;padding:6px 16px;border-radius:30px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
+.s-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;margin-bottom:16px;}
+.s-sub{color:#556;max-width:580px;line-height:1.8;margin-bottom:56px;font-size:1rem;}
+.text-center{text-align:center;}
+.text-center .s-sub{margin-left:auto;margin-right:auto;}
+
+/* ── SERVICES ── */
+.services-sec{background:var(--gray);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
+.svc-card{background:#fff;border-radius:20px;padding:36px 28px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);transition:.35s;cursor:default;border:1px solid rgba(0,114,198,.08);}
+.svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue),var(--darkblue));opacity:0;transition:.35s;}
+.svc-card:hover{transform:translateY(-8px);box-shadow:0 20px 48px rgba(0,114,198,.18);}
+.svc-card:hover::before{opacity:1;}
+.svc-card:hover .svc-icon-wrap,.svc-card:hover .svc-title,.svc-card:hover .svc-desc,.svc-card:hover .svc-tag{color:#fff;}
+.svc-card:hover .svc-icon-wrap{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3);}
+.svc-card:hover .svc-tag{background:rgba(255,215,0,.2);color:var(--gold);}
+.svc-top{display:flex;align-items:center;gap:16px;margin-bottom:18px;position:relative;}
+.svc-icon-wrap{width:52px;height:52px;border-radius:14px;background:rgba(0,114,198,.1);border:1px solid rgba(0,114,198,.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;transition:.35s;}
+.svc-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;color:var(--darkblue);transition:.35s;}
+.svc-desc{color:#667;font-size:.9rem;line-height:1.7;position:relative;transition:.35s;}
+.svc-tag{display:inline-block;background:rgba(0,114,198,.08);color:var(--blue);font-size:.73rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:14px;letter-spacing:.5px;transition:.35s;}
+.svc-number{position:absolute;top:0;right:0;font-family:'Montserrat',sans-serif;font-weight:900;font-size:4rem;color:rgba(0,114,198,.05);line-height:1;transition:.35s;}
+.svc-card:hover .svc-number{color:rgba(255,255,255,.07);}
+
+/* ── BEFORE/AFTER ── */
+.ba-sec{background:#fff;position:relative;overflow:hidden;}
+.ba-sec::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,114,198,.04),transparent);border-radius:50%;}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+@media(max-width:900px){.ba-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.ba-grid{grid-template-columns:1fr;}}
+.ba-card{border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.1);transition:.35s;position:relative;}
+.ba-card:hover{transform:translateY(-8px);box-shadow:0 24px 56px rgba(0,0,0,.18);}
+.ba-img-row{display:grid;grid-template-columns:1fr 1fr;height:220px;position:relative;}
+.ba-half{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.ba-half.dark{background:linear-gradient(160deg,#2a2a2a,#3a3a3a);}
+.ba-half.light{background:linear-gradient(160deg,#d8e8f8,#e8f4fc);}
+.ba-half-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);color:#fff;font-size:.7rem;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
+.ba-divider-line{position:absolute;top:0;left:50%;transform:translateX(-50%);width:3px;background:linear-gradient(180deg,var(--gold),#ffa500);height:100%;z-index:3;}
+.ba-icon{font-size:2.8rem;opacity:.3;}
+.ba-footer{background:linear-gradient(135deg,var(--deepblue),#002d5a);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;}
+.ba-footer-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.92rem;color:#fff;}
+.ba-footer-loc{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:2px;}
+.ba-badge{background:var(--green);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;}
+
+/* ── PROCESS ── */
+.process-sec{background:linear-gradient(160deg,#000e24 0%,#001f3f 50%,#002d5a 100%);position:relative;overflow:hidden;}
+.process-sec::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%230072C6' fill-opacity='0.06'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.process-sec .s-title{color:#fff;}
+.process-sec .s-tag{background:rgba(255,215,0,.12);border-color:rgba(255,215,0,.25);color:var(--gold);}
+.process-sec .s-sub{color:rgba(255,255,255,.65);}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1;}
+@media(max-width:800px){.process-steps{grid-template-columns:1fr 1fr;gap:24px;}}
+.step{text-align:center;padding:32px 20px;position:relative;}
+.step:not(:last-child)::after{content:'→';position:absolute;right:-8px;top:50px;font-size:1.5rem;color:rgba(255,215,0,.3);}
+@media(max-width:800px){.step:not(:last-child)::after{display:none;}}
+.step-num{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--darkblue));border:2px solid rgba(255,215,0,.3);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.4rem;color:var(--gold);margin:0 auto 20px;box-shadow:0 0 24px rgba(0,114,198,.4);}
+.step h3{font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;font-size:1rem;margin-bottom:10px;}
+.step p{color:rgba(255,255,255,.55);font-size:.87rem;line-height:1.6;}
+
+/* ── WHY US ── */
+.why-sec{background:var(--gray);}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+@media(max-width:800px){.why-layout{grid-template-columns:1fr;}}
+.why-visual{position:relative;}
+.why-main-card{background:linear-gradient(135deg,var(--blue),var(--darkblue));border-radius:24px;padding:48px 36px;text-align:center;box-shadow:0 24px 64px rgba(0,114,198,.35);}
+.why-big-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:5rem;color:var(--gold);line-height:1;text-shadow:0 0 30px rgba(255,215,0,.4);}
+.why-big-label{color:#fff;font-weight:700;font-size:1.1rem;margin-top:8px;}
+.why-big-sub{color:rgba(255,255,255,.65);font-size:.88rem;margin-top:6px;}
+.why-floaters{position:absolute;width:100%;display:flex;justify-content:space-between;bottom:-20px;padding:0 10px;}
+.why-float{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 8px 24px rgba(0,0,0,.1);text-align:center;flex:1;margin:0 6px;border:1px solid rgba(0,114,198,.1);}
+.why-float-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.5rem;color:var(--blue);}
+.why-float-label{font-size:.72rem;color:#888;margin-top:2px;font-weight:600;}
+.why-list{display:flex;flex-direction:column;gap:20px;margin-top:16px;}
+.why-item{display:flex;gap:18px;align-items:flex-start;padding:22px;background:#fff;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.05);border:1px solid rgba(0,114,198,.07);transition:.25s;}
+.why-item:hover{transform:translateX(6px);box-shadow:0 8px 24px rgba(0,114,198,.12);}
+.why-icon-box{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--darkblue));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.why-item h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;color:var(--darkblue);margin-bottom:4px;}
+.why-item p{color:#666;font-size:.87rem;line-height:1.6;}
+
+/* ── TESTIMONIALS ── */
+.test-sec{background:#fff;position:relative;overflow:hidden;}
+.test-sec::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,215,0,.05),transparent);border-radius:50%;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.test-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.test-grid{grid-template-columns:1fr;}}
+.test-card{background:#fff;border-radius:20px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.07);border:1px solid rgba(0,114,198,.08);transition:.3s;position:relative;overflow:hidden;}
+.test-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--green));}
+.test-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.12);}
+.test-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:14px;}
+.test-quote{color:#333;font-size:.92rem;line-height:1.75;margin-bottom:20px;position:relative;}
+.test-quote::before{content:'\201C';font-size:4rem;color:var(--blue);opacity:.08;position:absolute;top:-16px;left:-10px;font-family:Georgia,serif;line-height:1;}
+.test-footer{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(0,0,0,.06);}
+.test-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--darkblue));display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;font-size:.95rem;flex-shrink:0;}
+.test-name{font-weight:700;font-size:.9rem;color:var(--darkblue);}
+.test-loc{font-size:.75rem;color:#888;margin-top:1px;}
+.google-row{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:48px;flex-wrap:wrap;}
+.google-chip{display:flex;align-items:center;gap:10px;background:var(--gray);border-radius:50px;padding:12px 24px;font-weight:700;font-size:.9rem;color:#333;}
+
+/* ── QUOTE ── */
+.quote-sec{background:linear-gradient(160deg,#000e24,#001f3f);}
+.quote-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+@media(max-width:800px){.quote-inner{grid-template-columns:1fr;gap:48px;}}
+.q-left .s-title{color:#fff;}
+.q-left .s-sub{color:rgba(255,255,255,.65);}
+.q-left .s-tag{background:rgba(255,215,0,.12);border-color:rgba(255,215,0,.25);color:var(--gold);}
+.q-contact-cards{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+.q-contact-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 20px;transition:.2s;}
+.q-contact-card:hover{background:rgba(255,255,255,.12);}
+.q-cc-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--darkblue));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.q-cc-label{font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px;}
+.q-cc-value{font-weight:700;color:#fff;font-size:.95rem;}
+.q-cc-value a{color:var(--gold);text-decoration:none;}
+/* Form */
+.form-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:40px;backdrop-filter:blur(10px);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{margin-bottom:18px;}
+.form-group.full{grid-column:1/-1;}
+.form-label{display:block;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase;}
+.form-input{width:100%;padding:14px 18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;font-size:.95rem;font-family:inherit;color:#fff;transition:.25s;outline:none;}
+.form-input::placeholder{color:rgba(255,255,255,.3);}
+.form-input:focus{border-color:var(--blue);background:rgba(0,114,198,.15);}
+.form-input option{color:#000;}
+textarea.form-input{resize:vertical;min-height:110px;}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--green),#2d9a0f);color:#fff;border:none;padding:18px;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:.5px;transition:.3s;margin-top:8px;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(76,187,23,.3);}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(76,187,23,.5);}
+.form-note{text-align:center;color:rgba(255,255,255,.35);font-size:.78rem;margin-top:10px;letter-spacing:.3px;}
+
+/* ── FOOTER ── */
+footer{background:#000b1e;padding:60px 20px 32px;border-top:1px solid rgba(255,215,0,.1);}
+.footer-inner{max-width:1140px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr;gap:32px;}}
+.footer-brand p{color:rgba(255,255,255,.5);font-size:.88rem;line-height:1.7;margin-top:12px;max-width:300px;}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.3rem;color:#fff;}
+.footer-logo span{color:var(--gold);}
+.footer-tagline{color:var(--green);font-size:.82rem;font-weight:600;margin-top:2px;letter-spacing:.5px;}
+.footer-col h4{font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;font-size:.9rem;margin-bottom:16px;letter-spacing:.5px;text-transform:uppercase;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.88rem;transition:.2s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{color:rgba(255,255,255,.3);font-size:.8rem;}
+.footer-bottom span{color:var(--gold);}
+
+/* ── MOBILE NAV ── */
+@media(max-width:768px){
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .hero h1{font-size:2.4rem;}
+  .hero-phone{font-size:1.3rem;}
+  .step:not(:last-child)::after{display:none;}
+  .why-floaters{position:static;margin-top:20px;padding:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-shield">🛡️</div>
+    <div>
+      <div class="logo-text">INTEGRITY <span>PRESSURE WASHING</span></div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#quote">Contact</a></li>
+  </ul>
+  <a href="#quote" class="nav-cta">Free Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="drops-wrap">
+    <div class="hdrop"></div><div class="hdrop"></div><div class="hdrop"></div><div class="hdrop"></div><div class="hdrop"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-pill">⭐ Middle Tennessee's #1 Rated Power Washing Service</div>
+    <h1>Your Home Deserves<br><span class="line2">To Shine.</span></h1>
+    <p class="hero-sub">Professional exterior cleaning that transforms driveways, homes, decks & more. Fast, thorough, and guaranteed to impress.</p>
+    <div class="hero-btns">
+      <a href="#quote" class="btn-glow">🚿 Get a Free Quote</a>
+      <a href="#results" class="btn-outline">See Our Work →</a>
+    </div>
+    <div class="hero-phone">📞 <a href="tel:9319814180">931-981-4180</a></div>
+    <div class="stat-bar">
+      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Jobs Completed</div></div>
+      <div class="stat-item"><div class="stat-num">5.0★</div><div class="stat-label">Google Rating</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Satisfaction</div></div>
+      <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Estimates</div></div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>Scroll</span><div class="scroll-dot"></div></div>
+</section>
+
+<!-- TRUST BANNER -->
+<div class="trust-banner">✓ FULLY INSURED &nbsp;&nbsp;|&nbsp;&nbsp; ✓ FREE QUOTES &nbsp;&nbsp;|&nbsp;&nbsp; ✓ 5-STAR RATED &nbsp;&nbsp;|&nbsp;&nbsp; ✓ LOCALLY OWNED &nbsp;&nbsp;|&nbsp;&nbsp; ✓ SATISFACTION GUARANTEED</div>
+
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="s-inner">
+    <div class="text-center">
+      <div class="s-tag">💧 What We Do</div>
+      <h2 class="s-title">Professional Cleaning Services</h2>
+      <p class="s-sub">From grimy driveways to algae-covered siding, we restore your property's exterior to like-new condition using pro-grade equipment.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-number">01</div>
+        <div class="svc-top"><div class="svc-icon-wrap">🏠</div><div class="svc-title">House Washing</div></div>
+        <p class="svc-desc">Gentle soft washing removes dirt, mold, mildew and algae from your siding without damaging paint or materials.</p>
+        <span class="svc-tag">Soft Wash Technology</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-number">02</div>
+        <div class="svc-top"><div class="svc-icon-wrap">🚗</div><div class="svc-title">Driveway Cleaning</div></div>
+        <p class="svc-desc">High-pressure surface cleaning blasts away oil stains, tire marks, and years of grime from concrete and asphalt.</p>
+        <span class="svc-tag">Hot Water Pressure Wash</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-number">03</div>
+        <div class="svc-top"><div class="svc-icon-wrap">🚶</div><div class="svc-title">Sidewalk & Walkway</div></div>
+        <p class="svc-desc">Safe, pristine walkways for your family and guests. We remove slippery algae, moss, and stubborn stains.</p>
+        <span class="svc-tag">Slip-Free Results</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-number">04</div>
+        <div class="svc-top"><div class="svc-icon-wrap">🌿</div><div class="svc-title">Deck & Patio</div></div>
+        <p class="svc-desc">Restore your outdoor living space. We clean wood, composite, and concrete decks and patios to their original beauty.</p>
+        <span class="svc-tag">Wood Safe Formula</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-number">05</div>
+        <div class="svc-top"><div class="svc-icon-wrap">🏊</div><div class="svc-title">Pool Deck Cleaning</div></div>
+        <p class="svc-desc">Keep your pool area sparkling clean and slip-free. We remove algae, staining, and discoloration from all pool surrounds.</p>
+        <span class="svc-tag">Anti-Slip Treatment</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-number">06</div>
+        <div class="svc-top"><div class="svc-icon-wrap">🏗️</div><div class="svc-title">Roof Washing</div></div>
+        <p class="svc-desc">Low-pressure soft washing removes black streaks, moss, and lichen from your roof without voiding your manufacturer's warranty.</p>
+        <span class="svc-tag">Warranty Safe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER -->
+<section class="ba-sec" id="results">
+  <div class="s-inner">
+    <div class="text-center">
+      <div class="s-tag">📸 Real Results</div>
+      <h2 class="s-title">Before & After Transformations</h2>
+      <p class="s-sub">See the Integrity difference. Every job gets the same dedicated, detail-focused approach — and the results speak for themselves.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-img-row">
+          <div class="ba-half dark"><div class="ba-icon">🏊</div><div class="ba-half-label">Before</div></div>
+          <div class="ba-half light"><div class="ba-icon" style="opacity:.5;">✨</div><div class="ba-half-label">After</div></div>
+          <div class="ba-divider-line"></div>
+        </div>
+        <div class="ba-footer">
+          <div><div class="ba-footer-title">Pool Deck Cleaning</div><div class="ba-footer-loc">📍 Columbia, TN</div></div>
+          <div class="ba-badge">✓ Complete</div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-img-row">
+          <div class="ba-half dark"><div class="ba-icon">🚗</div><div class="ba-half-label">Before</div></div>
+          <div class="ba-half light"><div class="ba-icon" style="opacity:.5;">✨</div><div class="ba-half-label">After</div></div>
+          <div class="ba-divider-line"></div>
+        </div>
+        <div class="ba-footer">
+          <div><div class="ba-footer-title">Driveway Restoration</div><div class="ba-footer-loc">📍 Franklin, TN</div></div>
+          <div class="ba-badge">✓ Complete</div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-img-row">
+          <div class="ba-half dark"><div class="ba-icon">🏠</div><div class="ba-half-label">Before</div></div>
+          <div class="ba-half light"><div class="ba-icon" style="opacity:.5;">✨</div><div class="ba-half-label">After</div></div>
+          <div class="ba-divider-line"></div>
+        </div>
+        <div class="ba-footer">
+          <div><div class="ba-footer-title">House Soft Wash</div><div class="ba-footer-loc">📍 Spring Hill, TN</div></div>
+          <div class="ba-badge">✓ Complete</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="s-inner">
+    <div class="text-center">
+      <div class="s-tag">⚙️ How It Works</div>
+      <h2 class="s-title">Our Simple 4-Step Process</h2>
+      <p class="s-sub">Getting your home professionally cleaned has never been easier. Here's what to expect when you work with us.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step"><div class="step-num">1</div><h3>Request a Quote</h3><p>Call or fill out our form. We'll get back to you fast with a free, no-obligation estimate.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Schedule the Job</h3><p>Pick a date and time that works for you. We show up on time, every time — guaranteed.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>We Get to Work</h3><p>Our trained crew uses professional-grade equipment to deliver a thorough, careful clean.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>You're Amazed</h3><p>We clean up, walk through the results with you, and don't leave until you're 100% satisfied.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-sec">
+  <div class="s-inner">
+    <div class="why-layout">
+      <div class="why-visual">
+        <div class="why-main-card">
+          <div class="why-big-num">5★</div>
+          <div class="why-big-label">Google Rated</div>
+          <div class="why-big-sub">Across 100+ verified reviews</div>
+          <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+            <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,.8);font-size:.85rem;">Communication</span>
+              <span style="color:var(--gold);font-weight:700;">★★★★★</span>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,.8);font-size:.85rem;">Quality of Work</span>
+              <span style="color:var(--gold);font-weight:700;">★★★★★</span>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,.8);font-size:.85rem;">Punctuality</span>
+              <span style="color:var(--gold);font-weight:700;">★★★★★</span>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,.8);font-size:.85rem;">Value</span>
+              <span style="color:var(--gold);font-weight:700;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+        <div class="why-floaters">
+          <div class="why-float"><div class="why-float-num">500+</div><div class="why-float-label">Jobs Done</div></div>
+          <div class="why-float"><div class="why-float-num">100%</div><div class="why-float-label">Guaranteed</div></div>
+          <div class="why-float"><div class="why-float-num">$0</div><div class="why-float-label">Quote Cost</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="s-tag">🛡️ Why Choose Us</div>
+        <h2 class="s-title">The Integrity Difference</h2>
+        <p class="s-sub" style="margin-bottom:24px;">We don't just clean surfaces — we build trust. Here's why hundreds of Middle Tennessee homeowners choose us.</p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-icon-box">🛡️</div><div><h4>Fully Licensed & Insured</h4><p>You're fully protected on every job. We carry comprehensive liability coverage so you never have to worry.</p></div></div>
+          <div class="why-item"><div class="why-icon-box">🌿</div><div><h4>Eco-Friendly Solutions</h4><p>Biodegradable, plant-safe cleaning agents that protect your landscaping, pets, and the environment.</p></div></div>
+          <div class="why-item"><div class="why-icon-box">📍</div><div><h4>Locally Owned & Operated</h4><p>We're your neighbors in Middle Tennessee. Our reputation in this community means everything to us.</p></div></div>
+          <div class="why-item"><div class="why-icon-box">✅</div><div><h4>100% Satisfaction Guaranteed</h4><p>We're not done until you're thrilled. Period. Your satisfaction is our #1 priority on every single job.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-sec" id="reviews">
+  <div class="s-inner">
+    <div class="text-center">
+      <div class="s-tag">💬 Customer Reviews</div>
+      <h2 class="s-title">What Middle Tennessee Is Saying</h2>
+      <p class="s-sub">Real reviews from real homeowners. See why we're the most trusted pressure washing company in the area.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Integrity Pressure Washing did an amazing job on our driveway and sidewalks. They were professional, on time, and the results were incredible. Looks brand new!</p>
+        <div class="test-footer"><div class="test-avatar">SM</div><div><div class="test-name">Sarah M.</div><div class="test-loc">📍 Franklin, TN · Google Review</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">I was blown away by the transformation of our pool deck. They removed years of stains and grime in just a few hours. Highly recommend these guys!</p>
+        <div class="test-footer"><div class="test-avatar">JT</div><div><div class="test-name">James T.</div><div class="test-loc">📍 Spring Hill, TN · Google Review</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Fast, friendly, and incredibly thorough. Our house siding looks like it did when it was brand new. Will absolutely use Integrity again next season.</p>
+        <div class="test-footer"><div class="test-avatar">LK</div><div><div class="test-name">Linda K.</div><div class="test-loc">📍 Columbia, TN · Google Review</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Best pressure washing service in the area, hands down. Fair pricing, amazing results, and they cleaned up everything after. True professionals!</p>
+        <div class="test-footer"><div class="test-avatar">MR</div><div><div class="test-name">Mike R.</div><div class="test-loc">📍 Brentwood, TN · Google Review</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">We had our deck and back patio done and I couldn't believe the difference. Showed up on time, finished fast, and were super respectful of our property.</p>
+        <div class="test-footer"><div class="test-avatar">AW</div><div><div class="test-name">Ashley W.</div><div class="test-loc">📍 Nolensville, TN · Google Review</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Called for a quote and had a crew out within days. Super responsive, professional equipment, and the driveway looks fantastic. 10/10 would recommend!</p>
+        <div class="test-footer"><div class="test-avatar">DH</div><div><div class="test-name">David H.</div><div class="test-loc">📍 Murfreesboro, TN · Google Review</div></div></div>
+      </div>
+    </div>
+    <div class="google-row">
+      <div class="google-chip">🌟 <strong>5.0</strong> rating on Google</div>
+      <div class="google-chip">✅ 100+ verified reviews</div>
+      <div class="google-chip">📍 Middle Tennessee's top rated</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="quote-sec" id="quote">
+  <div class="s-inner">
+    <div class="quote-inner">
+      <div class="q-left">
+        <div class="s-tag">📋 Get Started</div>
+        <h2 class="s-title">Request Your<br>Free Quote</h2>
+        <p class="s-sub">Ready for a cleaner home? Fill out the form or give us a call — we respond fast with a no-obligation estimate.</p>
+        <div class="q-contact-cards">
+          <div class="q-contact-card"><div class="q-cc-icon">📞</div><div><div class="q-cc-label">Call or Text</div><div class="q-cc-value"><a href="tel:9319814180">931-981-4180</a></div></div></div>
+          <div class="q-contact-card"><div class="q-cc-icon">📍</div><div><div class="q-cc-label">Service Area</div><div class="q-cc-value">Franklin & Middle Tennessee</div></div></div>
+          <div class="q-contact-card"><div class="q-cc-icon">🕐</div><div><div class="q-cc-label">Hours</div><div class="q-cc-value">Mon–Sun: 8:00 AM – 7:00 PM</div></div></div>
+          <div class="q-contact-card"><div class="q-cc-icon">💰</div><div><div class="q-cc-label">Quote Cost</div><div class="q-cc-value">Always Free. No Obligation.</div></div></div>
+        </div>
+      </div>
+      <div class="form-box">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="John"/></div>
+          <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith"/></div>
+          <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" placeholder="(615) 000-0000"/></div>
+          <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="john@email.com"/></div>
+          <div class="form-group full"><label class="form-label">Service Needed</label>
+            <select class="form-input">
+              <option value="">Select a service...</option>
+              <option>House Washing</option>
+              <option>Driveway Cleaning</option>
+              <option>Sidewalk & Walkway</option>
+              <option>Deck & Patio Cleaning</option>
+              <option>Pool Deck Cleaning</option>
+              <option>Roof Washing</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group full"><label class="form-label">Property Address</label><input class="form-input" type="text" placeholder="123 Main St, Franklin, TN"/></div>
+          <div class="form-group full"><label class="form-label">Additional Details</label><textarea class="form-input" placeholder="Tell us about your project — size, condition, any specific concerns..."></textarea></div>
+        </div>
+        <button class="submit-btn" onclick="alert('Thank you! We\'ll be in touch shortly with your free quote. 🚿')">🚿 Request My Free Quote</button>
+        <p class="form-note">🔒 We respond within 1 business day. No spam, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">INTEGRITY <span>PRESSURE WASHING</span></div>
+        <div class="footer-tagline">"Power Wash Pros" — Middle Tennessee</div>
+        <p>Professional exterior cleaning services for residential properties across Franklin, Spring Hill, Columbia, Brentwood, Nolensville, and the greater Middle Tennessee area.</p>
+        <div style="margin-top:16px;font-size:1.3rem;color:var(--gold);font-weight:900;font-family:'Montserrat',sans-serif;">📞 <a href="tel:9319814180" style="color:var(--gold);text-decoration:none;">931-981-4180</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">House Washing</a></li>
+          <li><a href="#services">Driveway Cleaning</a></li>
+          <li><a href="#services">Sidewalk & Walkway</a></li>
+          <li><a href="#services">Deck & Patio</a></li>
+          <li><a href="#services">Pool Deck</a></li>
+          <li><a href="#services">Roof Washing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#results">Before & After</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#quote">Free Quote</a></li>
+          <li><a href="tel:9319814180">Call Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Integrity Pressure Washing. All rights reserved.</p>
+      <p>Made with ❤️ in <span>Middle Tennessee</span></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
