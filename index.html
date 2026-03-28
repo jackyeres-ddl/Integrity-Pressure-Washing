@@ -290,7 +290,7 @@ function drawLily(x,y,sz,ang,col,a,t,bloom){
   var n=6;
   for(var i=0;i<n;i++){
     var pa=i/n*6.283;
-    var flutter=Math.sin(t*1.8+i*1.7)*.06;
+    var flutter=(R()-.5)*.02; /* static flutter for cinematic stillness */
     var curlBack=.15+bloom*.1;
     G.save();G.rotate(pa+flutter);
     /* main petal with recurve */
@@ -317,7 +317,7 @@ function drawLily(x,y,sz,ang,col,a,t,bloom){
   }
   /* pistil cluster */
   for(var k=0;k<5;k++){
-    var pa2=k/5*6.283+t*.2;var pr=sz*.18;
+    var pa2=k/5*6.283+(R()-.5)*.2;var pr=sz*.18;
     var px=Math.cos(pa2)*pr,py=Math.sin(pa2)*pr;
     G.strokeStyle='rgba(180,220,130,'+(a*.5)+')';G.lineWidth=1;G.lineCap='round';
     G.beginPath();G.moveTo(0,0);G.lineTo(px,py);G.stroke();
@@ -341,7 +341,7 @@ function drawDahlia(x,y,sz,ang,col,a,t,bloom){
   var totalPetals=Math.floor(20+bloom*30);
   for(var i=totalPetals-1;i>=0;i--){
     var frac=i/totalPetals;
-    var pa=i*golden+Math.sin(t*.5+i*.1)*.03;
+    var pa=i*golden+Math.sin(i*.1)*.01; /* reduce time-based wobble */
     var dist=frac*sz*.15;
     var pLen=sz*(.15+frac*.85);
     var pWid=sz*(.04+frac*.09);
@@ -363,11 +363,11 @@ function drawDahlia(x,y,sz,ang,col,a,t,bloom){
   var cg=G.createRadialGradient(0,0,0,0,0,sz*.12);
   cg.addColorStop(0,'rgba(255,210,80,'+(a*.8)+')');cg.addColorStop(.5,'rgba(180,100,20,'+(a*.5)+')');cg.addColorStop(1,col(a*.3,0));
   G.fillStyle=cg;G.beginPath();G.arc(0,0,sz*.1,0,6.283);G.fill();
-  /* texture dots in center */
-  for(var j=0;j<8;j++){
-    var da=j/8*6.283;var dd=sz*(.03+R()*.05);
-    G.fillStyle='rgba(140,80,10,'+(a*.4)+')';
-    G.beginPath();G.arc(Math.cos(da)*dd,Math.sin(da)*dd,sz*.01,0,6.283);G.fill();
+  /* texture dots in center (reduced) */
+  for(var j=0;j<4;j++){
+    var da=j/4*6.283;var dd=sz*(.03+R()*.04);
+    G.fillStyle='rgba(140,80,10,'+(a*.18)+')';
+    G.beginPath();G.arc(Math.cos(da)*dd,Math.sin(da)*dd,sz*.008,0,6.283);G.fill();
   }
   G.restore();
 }
@@ -404,6 +404,7 @@ function drawWisteria(x,y,sz,ang,col,a,t,bloom){
       var bSz=sz*(.06+(.06*(1-frac)));
       var bA=a*(.8-frac*.4);
       var wobble=Math.sin(t*1.2+i*2.1+b)*.15;
+        var wobble=(R()-.5)*.06; /* static subtle wobble */
       G.save();G.translate(pt.x+(R()-.5)*sz*.03,pt.y);G.rotate(wobble);
       /* bell-shaped blossom */
       G.beginPath();
@@ -432,7 +433,7 @@ function drawAbstract(x,y,sz,ang,col,a,t,bloom){
     var ra=i/n*6.283+(R()-.5)*.4;
     var rl=sz*(.3+R()*.7);
     var rw=sz*(.02+R()*.06);
-    var wobble=Math.sin(t+i*1.3)*.1;
+    var wobble=(R()-.5)*.06; /* remove time-based wobble for subtler splashes */
     G.save();G.rotate(ra+wobble);
     /* tapered splash stroke */
     G.beginPath();G.moveTo(-rw*.5,0);
@@ -450,14 +451,15 @@ function drawAbstract(x,y,sz,ang,col,a,t,bloom){
   /* concentric glow rings */
   for(var r=3;r>=1;r--){
     var rr=sz*(.1+r*.12);
-    var ga=a*(.06+r*.03)*Math.sin(t*.8+r)*.5+a*.08;
+    /* much more subtle, non-oscillating glow */
+    var ga=a*(.02 + r*.01) + a*.02;
     var gg=G.createRadialGradient(0,0,rr*.5,0,0,rr);
-    gg.addColorStop(0,col(Math.max(0,ga),.3));gg.addColorStop(1,'rgba(0,0,0,0)');
+    gg.addColorStop(0,col(Math.max(0,ga),.18));gg.addColorStop(1,'rgba(0,0,0,0)');
     G.fillStyle=gg;G.beginPath();G.arc(0,0,rr,0,6.283);G.fill();
   }
   /* bright core with lens flare */
   var cg=G.createRadialGradient(0,0,0,0,0,sz*.1);
-  cg.addColorStop(0,'rgba(255,250,220,'+(a*.7)+')');cg.addColorStop(.5,col(a*.5,.4));cg.addColorStop(1,'rgba(0,0,0,0)');
+  cg.addColorStop(0,'rgba(255,250,220,'+(a*.35)+')');cg.addColorStop(.5,col(a*.35,.3));cg.addColorStop(1,'rgba(0,0,0,0)');
   G.fillStyle=cg;G.beginPath();G.arc(0,0,sz*.1,0,6.283);G.fill();
   G.restore();
 }
@@ -473,7 +475,7 @@ function drawVine(x,y,len,ang,curl,col,a,t,growth){
   G.beginPath();G.moveTo(0,0);
   for(var i=1;i<=segs;i++){
     var f=i/segs;if(f>growth)break;
-    var px=Math.sin(f*curl*3.14)*gl*.12+Math.sin(t*.4+f*5)*2;
+    var px=Math.sin(f*curl*3.14)*gl*.12+(R()-.5)*2;
     var py=-f*gl;
     G.lineTo(px,py);
   }G.stroke();
@@ -502,7 +504,7 @@ function drawVine(x,y,len,ang,curl,col,a,t,growth){
     G.beginPath();G.moveTo(tipX,tipY);
     var curlR=len*.03;
     for(var k=0;k<8;k++){
-      var ka=k/8*4+t*.5;
+      var ka=k/8*4+(R()-.5)*.4;
       G.lineTo(tipX+Math.cos(ka)*curlR*(1-k/10),tipY-Math.sin(ka)*curlR*(1-k/10)-k*1.5);
     }G.stroke();
   }
@@ -538,9 +540,9 @@ var burstDone=false;
     });
   }
   /* small sparkle accents in center */
-  for(var k=0;k<12;k++){
-    var ba=k/12*6.283+R()*.5;
-    var bd=15+R()*60;
+  for(var k=0;k<6;k++){
+    var ba=k/6*6.283+R()*.5;
+    var bd=12+R()*40;
     FL.push({
       type:3, ox:Math.cos(ba)*bd, oy:Math.sin(ba)*bd,
       size:8+R()*15, angle:R()*6.283,
@@ -556,10 +558,10 @@ var burstDone=false;
 
   /* EXPANDING RINGS — appear on scroll */
   var rings=[
-    {n:14, dMin:170, dMax:340, szMin:30, szMax:60, sA:.03, sF:.1, types:[0,1,2]},
-    {n:18, dMin:300, dMax:520, szMin:35, szMax:70, sA:.08, sF:.2, types:[0,1,2,3]},
-    {n:22, dMin:450, dMax:720, szMin:40, szMax:80, sA:.15, sF:.35, types:[0,1,2,3]},
-    {n:26, dMin:600, dMax:1000, szMin:45, szMax:90, sA:.28, sF:.55, types:[0,1,2,3]},
+    {n:22, dMin:170, dMax:380, szMin:28, szMax:70, sA:.02, sF:.12, types:[0,1,2]},
+    {n:28, dMin:300, dMax:620, szMin:32, szMax:80, sA:.06, sF:.22, types:[0,1,2,3]},
+    {n:36, dMin:450, dMax:980, szMin:36, szMax:90, sA:.12, sF:.38, types:[0,1,2,3]},
+    {n:48, dMin:700, dMax:1600, szMin:40, szMax:120, sA:.22, sF:.6, types:[0,1,2,3]},
   ];
   for(var ri=0;ri<rings.length;ri++){
     var rr=rings[ri];
@@ -590,6 +592,28 @@ var burstDone=false;
       curl:1+R()*3, col:makeCol(),
       scrollAppear:.01+R()*.35, scrollFull:.08+R()*.4,
     });
+  }
+})();
+
+/* Arrange flowers into contextual clusters/chains so placement reads as intentional */
+(function arrangeFlowersContextually(){
+  var idx=0; var len=FL.length;
+  while(idx < len){
+    var cluster = 3 + Math.floor(R()*6);
+    for(var k=0;k<cluster && idx < len;k++, idx++){
+      if(k===0){
+        /* nudge first flower in cluster slightly */
+        FL[idx].ox += (R()-.5)*80; FL[idx].oy += (R()-.5)*80;
+      } else {
+        var prev = FL[idx-1];
+        var ang = (R()-.5)*Math.PI*2;
+        var dist = (prev.size*0.6) + 20 + R()*80;
+        FL[idx].ox = prev.ox + Math.cos(ang)*dist;
+        FL[idx].oy = prev.oy + Math.sin(ang)*dist;
+        /* slightly vary size for visual interest */
+        FL[idx].size = Math.max(12, FL[idx].size*(0.85+R()*0.4));
+      }
+    }
   }
 })();
 
@@ -629,8 +653,8 @@ function glow(prog){
 var t=0;var particleSpawned=false;
 function loop(){
   var now=performance.now()/1000;
-  var elapsed=now-startTime;
-  t+=.016;
+    var elapsed=now-startTime;
+    t+=.008;
   G.clearRect(0,0,W,H);
   var prog=sF();
   var panel=cP();
