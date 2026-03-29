@@ -29,15 +29,19 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 
 .panel{position:relative;width:100%;min-height:100vh;overflow:hidden;display:flex;}
 
-#p0{background:var(--bg0);align-items:center;justify-content:center;flex-direction:column;gap:0;height:100vh;}
-.p0-eyebrow{font-size:11px;font-weight:400;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:32px;opacity:0;animation:fadeup 2s ease 0.4s forwards;position:relative;z-index:5;}
-.p0-logo-wrap{opacity:0;animation:fadeup 2.5s ease 1s forwards;position:relative;z-index:5;}
-.p0-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--txt-dim);opacity:0;animation:fadeup 2s ease 2.4s forwards;z-index:5;}
+/* ═══ P0 SPLASH ═══ */
+#p0{background:var(--bg0);align-items:center;justify-content:center;flex-direction:column;height:100vh;}
+#p0canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+.p0-eyebrow{font-size:11px;font-weight:400;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:32px;opacity:0;animation:fadeup 2s ease .4s forwards;position:relative;z-index:10;}
+.p0-logo-wrap{opacity:0;animation:fadeup 2.5s ease 1s forwards;position:relative;z-index:10;filter:drop-shadow(0 0 30px rgba(0,0,0,.9)) drop-shadow(0 0 60px rgba(0,0,0,.7));}
+.p0-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--txt-dim);opacity:0;animation:fadeup 2s ease 2.4s forwards;z-index:10;}
 .p0-scroll::after{content:'';display:block;width:1px;height:44px;background:linear-gradient(to bottom,var(--acc2),transparent);animation:pulse 2.2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:.2}50%{opacity:.8}}
 @keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
+/* ═══ P1 HERO ═══ */
 #p1{align-items:flex-end;justify-content:flex-start;height:100vh;}
+#p1canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 .p1-vignette{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 80% 80% at 55% 50%,transparent 30%,rgba(0,0,0,.75) 100%),linear-gradient(to right,rgba(0,0,0,.88) 0%,transparent 50%),linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 40%);}
 .p1-content{position:relative;z-index:3;padding:0 72px 72px;max-width:750px;}
 .p1-eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:24px;display:flex;align-items:center;gap:14px;}
@@ -50,7 +54,9 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .btn-text{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--txt-low);cursor:pointer;background:none;border:none;font-family:'Barlow Condensed',sans-serif;transition:color .2s;}
 .btn-text:hover{color:var(--txt);}
 
+/* ═══ P2 ETHOS ═══ */
 #p2{background:var(--bg1);align-items:center;justify-content:center;}
+#p2canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 .p2-inner{max-width:1000px;width:100%;padding:0 72px;display:grid;grid-template-columns:1fr 2px 1fr;gap:64px;align-items:center;position:relative;z-index:3;}
 .p2-rule-v{background:var(--acc-line);height:240px;margin:auto;}
 .p2-left{text-align:right;}
@@ -61,7 +67,9 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .p2-right p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:300;line-height:1.9;color:var(--txt-low);font-style:italic;}
 .p2-right p strong{font-style:normal;font-weight:400;color:var(--txt-mid);}
 
+/* ═══ P3 SERVICES ═══ */
 #p3{background:var(--bg0);flex-direction:column;align-items:flex-start;justify-content:center;padding:0 72px;}
+#p3canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 .p3-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:48px;display:flex;align-items:center;gap:14px;position:relative;z-index:3;}
 .p3-label::before{content:'';display:block;width:32px;height:1px;background:var(--acc1);}
 .services-list{display:flex;flex-direction:column;gap:0;width:100%;max-width:900px;position:relative;z-index:3;}
@@ -77,6 +85,8 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .svc-arrow{font-size:1.2rem;color:var(--acc-dim);flex-shrink:0;transition:all .3s;margin-left:16px;}
 .svc-item:hover .svc-arrow{color:var(--acc2);transform:translateX(6px);}
 
+/* ═══ P4+P5 SHARED VINE CANVAS ═══ */
+#vineCanvas{position:absolute;pointer-events:none;z-index:1;}
 #p4{background:var(--bg2);flex-direction:column;align-items:center;justify-content:center;padding:0 72px;}
 .p4-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:48px;align-self:flex-start;display:flex;align-items:center;gap:14px;position:relative;z-index:3;}
 .p4-label::before{content:'';display:block;width:32px;height:1px;background:var(--acc1);}
@@ -104,7 +114,8 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .step-h{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--txt-mid);margin-bottom:10px;}
 .step-p{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--txt-low);line-height:1.8;font-style:italic;font-weight:300;}
 
-#p6{background:var(--bg2);align-items:center;justify-content:center;flex-direction:column;padding:0 72px;}
+/* ═══ P6 PRICING ═══ */
+#p6{background:var(--bg1);align-items:center;justify-content:center;flex-direction:column;padding:0 72px;}
 .p6-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:48px;align-self:flex-start;max-width:900px;width:100%;display:flex;align-items:center;gap:14px;position:relative;z-index:3;}
 .p6-label::before{content:'';display:block;width:32px;height:1px;background:var(--acc1);}
 .p6-inner{max-width:900px;width:100%;position:relative;z-index:3;}
@@ -113,7 +124,7 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .p6-h em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.5rem,3.5vw,3.5rem);color:var(--acc2);display:block;letter-spacing:1px;line-height:1.3;}
 .p6-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--txt-low);line-height:1.85;font-style:italic;max-width:320px;text-align:right;}
 .p6-pillars{display:flex;gap:1px;background:var(--acc-line);margin-bottom:40px;}
-.pillar{flex:1;padding:36px 28px;background:var(--bg2);border-top:1px solid var(--acc-line);}
+.pillar{flex:1;padding:36px 28px;background:var(--bg1);border-top:1px solid var(--acc-line);}
 .pillar-i{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:var(--acc-dim);margin-bottom:12px;}
 .pillar h4{font-size:1rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--txt-mid);margin-bottom:8px;}
 .pillar p{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--txt-low);line-height:1.8;font-style:italic;}
@@ -122,9 +133,11 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .btn-sheet{padding:14px 36px;background:var(--acc1);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;}
 .btn-sheet:hover{background:var(--acc2);}
 
-#p7{background:var(--bg0);display:grid;grid-template-columns:1fr 1fr;}
-.p7-left{position:relative;overflow:hidden;background:var(--bg1);display:flex;flex-direction:column;justify-content:flex-end;padding:72px;}
-.p7-vignette{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,transparent 60%),linear-gradient(to right,transparent 60%,rgba(0,0,0,.7) 100%);z-index:2;}
+/* ═══ P7 CONTACT — bg matches p6 for flow ═══ */
+#p7{background:var(--bg1);display:grid;grid-template-columns:1fr 1fr;}
+#p7canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+.p7-left{position:relative;overflow:hidden;background:transparent;display:flex;flex-direction:column;justify-content:flex-end;padding:72px;}
+.p7-vignette{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 50%),linear-gradient(to right,transparent 50%,rgba(6,13,26,.8) 100%);z-index:2;}
 .p7-left-content{position:relative;z-index:3;}
 .p7-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
 .p7-label::before{content:'';display:block;width:20px;height:1px;background:var(--acc1);}
@@ -134,7 +147,7 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .p7-link{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--txt-low);transition:color .2s;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;}
 .p7-link:hover{color:var(--txt);}
 .p7-link-dot{width:5px;height:5px;border-radius:50%;background:var(--acc2);opacity:.5;flex-shrink:0;}
-.p7-right{background:var(--bg2);padding:72px 64px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--acc-line);}
+.p7-right{background:rgba(6,13,26,.6);padding:72px 64px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--acc-line);position:relative;z-index:3;}
 .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:22px;}
 .fg label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--acc-dim);}
 .fg input,.fg select,.fg textarea{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.1);padding:12px 0;color:var(--txt-mid);font-family:'Cormorant Garamond',serif;font-size:1.1rem;outline:none;transition:border-color .25s;-webkit-appearance:none;appearance:none;font-style:italic;}
@@ -152,13 +165,12 @@ body{background:var(--bg0);color:var(--txt);font-family:'Barlow Condensed',sans-
 .form-success p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--txt-low);line-height:1.8;font-style:italic;}
 
 footer{background:var(--bg1);padding:24px 72px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--acc-line);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--txt-dim);}
-footer span:last-child{color:var(--acc-dim);}
 
 .modal-ov{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .modal-ov.open{opacity:1;pointer-events:all;}
 .modal-box{width:min(440px,92vw);background:var(--bg2);border-top:2px solid var(--acc1);border-left:1px solid var(--acc-line);border-right:1px solid var(--acc-line);border-bottom:1px solid var(--acc-line);padding:48px 40px;transform:translateY(16px);transition:transform .35s cubic-bezier(.22,1,.36,1);}
 .modal-ov.open .modal-box{transform:translateY(0);}
-.modal-close{float:right;background:none;border:none;color:var(--txt-low);font-size:1.3rem;cursor:pointer;transition:color .2s;margin-top:-8px;}
+.modal-close{float:right;background:none;border:none;color:var(--txt-low);font-size:1.3rem;cursor:pointer;}
 .modal-close:hover{color:var(--txt);}
 .modal-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--acc-dim);margin-bottom:8px;clear:both;}
 .modal-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;font-style:italic;color:var(--txt-mid);margin-bottom:4px;}
@@ -179,102 +191,38 @@ footer span:last-child{color:var(--acc-dim);}
   .panel{min-height:auto;height:auto;padding-top:80px;padding-bottom:80px;}
   #p0{height:100vh;min-height:100vh;padding:0;}
   #p1{height:100vh;min-height:100vh;padding:0;}
-  .p2-inner{grid-template-columns:1fr;gap:40px;padding:0 28px;}
-  .p2-rule-v{display:none;}
-  .p2-left{text-align:left;}
-  .p2-num{font-size:8rem;}
-  .p2-h{font-size:2.4rem;}
-  .p2-right p{font-size:1.15rem;line-height:1.85;}
+  .p2-inner{grid-template-columns:1fr;gap:40px;padding:0 28px;}.p2-rule-v{display:none;}.p2-left{text-align:left;}.p2-num{font-size:8rem;}
   #p3{padding:80px 28px;}
-  .p3-label{margin-bottom:32px;}
-  .svc-item{flex-wrap:wrap;gap:16px;padding:24px 0;}
-  .svc-name{font-size:1.6rem;}
-  .svc-desc{display:block;max-width:100%;text-align:left;font-size:.95rem;flex-basis:100%;padding-left:44px;margin-top:-4px;}
-  .svc-arrow{display:none;}
-  #p4{padding:80px 28px;}
-  .vs-row{grid-template-columns:1fr 1fr;}
-  .vs-cell:last-child,.vs-row.header .vs-cell:last-child{display:none;}
-  .vs-cell{padding:16px 12px;font-size:.9rem;}
-  .vs-cell.topic{font-size:.85rem;}
-  .vs-cell.head-d{font-size:1rem;}
-  .p5-inner{padding:0 28px;}
-  .p5-label{margin-bottom:40px;}
-  .steps-line{flex-direction:column;gap:40px;}
-  .steps-line::before{display:none;}
-  .step-item{padding:0;display:grid;grid-template-columns:28px 1fr;gap:0 20px;}
-  .step-dot{grid-row:1/4;margin:0;}
-  #p6{padding:80px 28px;}
-  .p6-top{flex-direction:column;gap:24px;}
-  .p6-h{font-size:3rem;}
-  .p6-sub{text-align:left;max-width:100%;font-size:1.05rem;}
-  .p6-pillars{flex-direction:column;gap:0;}
-  .pillar{padding:28px 20px;}
-  .p6-cta-row{flex-direction:column;align-items:flex-start;gap:20px;}
-  #p7{grid-template-columns:1fr;min-height:auto;}
-  .p7-left{height:auto;min-height:50vh;padding:60px 28px;}
-  .p7-h{font-size:3rem;}
-  .p7-h em{font-size:1.8rem;}
-  .p7-right{padding:48px 28px;}
-  .f2{grid-template-columns:1fr 1fr;gap:16px;}
-  .p1-content{padding:0 28px 60px;max-width:100%;}
-  .p1-h{font-size:3.2rem;letter-spacing:-1px;}
-  .p1-h em{font-size:1.6rem;}
-  .p1-eyebrow{font-size:10px;margin-bottom:20px;}
-  .p1-cta{flex-direction:column;align-items:flex-start;gap:16px;}
+  .svc-item{flex-wrap:wrap;gap:16px;padding:24px 0;}.svc-name{font-size:1.6rem;}.svc-desc{display:block;max-width:100%;text-align:left;flex-basis:100%;padding-left:44px;}.svc-arrow{display:none;}
+  #p4{padding:80px 28px;}.vs-row{grid-template-columns:1fr 1fr;}.vs-cell:last-child,.vs-row.header .vs-cell:last-child{display:none;}
+  .p5-inner{padding:0 28px;}.steps-line{flex-direction:column;gap:40px;}.steps-line::before{display:none;}.step-item{padding:0;display:grid;grid-template-columns:28px 1fr;gap:0 20px;}.step-dot{grid-row:1/4;margin:0;}
+  #p6{padding:80px 28px;}.p6-top{flex-direction:column;gap:24px;}.p6-h{font-size:3rem;}.p6-sub{text-align:left;max-width:100%;}.p6-pillars{flex-direction:column;gap:0;}.p6-cta-row{flex-direction:column;align-items:flex-start;gap:20px;}
+  #p7{grid-template-columns:1fr;}.p7-left{min-height:50vh;padding:60px 28px;}.p7-h{font-size:3rem;}.p7-right{padding:48px 28px;}.f2{grid-template-columns:1fr 1fr;gap:16px;}
+  .p1-content{padding:0 28px 60px;max-width:100%;}.p1-h{font-size:3.2rem;letter-spacing:-1px;}.p1-h em{font-size:1.6rem;}.p1-cta{flex-direction:column;align-items:flex-start;gap:16px;}
   #sidenav{display:none;}
   footer{padding:20px 28px;flex-direction:column;gap:10px;text-align:center;font-size:10px;}
 }
 @media(max-width:480px){
   .p0-eyebrow{font-size:9px;letter-spacing:4px;padding:0 20px;text-align:center;}
-  .p1-h{font-size:2.6rem;}
-  .p1-h em{font-size:1.4rem;}
-  .p2-num{font-size:5rem;}
-  .p2-h{font-size:2rem;}
-  .svc-name{font-size:1.4rem;}
-  .svc-desc{padding-left:0;font-size:.9rem;}
-  .p6-h{font-size:2.4rem;}
-  .p7-h{font-size:2.4rem;}
+  .p1-h{font-size:2.6rem;}.p1-h em{font-size:1.4rem;}
+  .p2-num{font-size:5rem;}.svc-name{font-size:1.4rem;}
+  .p6-h{font-size:2.4rem;}.p7-h{font-size:2.4rem;}
   .f2{grid-template-columns:1fr;}
-  .vs-cell{padding:12px 8px;font-size:.85rem;}
 }
 </style>
 </head>
 <body>
 
-<canvas id="floraCanvas"></canvas>
+<div class="modal-ov" id="modal"><div class="modal-box"><button class="modal-close" onclick="closeModal()">&#215;</button><div class="modal-label">Direct Contact</div><div class="modal-title">Let's talk.</div><div class="modal-sub">We respond within one business day.</div><div class="modal-rule"></div><a class="c-row" href="mailto:management@deaninformationsystems.com"><div class="c-dot"></div><div><div class="c-type">Email</div><div class="c-val">management@deaninformationsystems.com</div></div></a><a class="c-row" href="tel:+16156513603"><div class="c-dot"></div><div><div class="c-type">Phone</div><div class="c-val">(615) 651-3603</div></div></a></div></div>
 
-<div class="modal-ov" id="modal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">&#215;</button>
-    <div class="modal-label">Direct Contact</div>
-    <div class="modal-title">Let's talk.</div>
-    <div class="modal-sub">We respond within one business day.</div>
-    <div class="modal-rule"></div>
-    <a class="c-row" href="mailto:management@deaninformationsystems.com"><div class="c-dot"></div><div><div class="c-type">Email</div><div class="c-val">management@deaninformationsystems.com</div></div></a>
-    <a class="c-row" href="tel:+16156513603"><div class="c-dot"></div><div><div class="c-type">Phone</div><div class="c-val">(615) 651-3603</div></div></a>
-  </div>
-</div>
-
-<nav id="sidenav">
-  <a href="#p0" class="active"><span>Open</span></a>
-  <a href="#p1"><span>Identity</span></a>
-  <a href="#p2"><span>Ethos</span></a>
-  <a href="#p3"><span>Services</span></a>
-  <a href="#p4"><span>Why Dean</span></a>
-  <a href="#p5"><span>Process</span></a>
-  <a href="#p6"><span>Pricing</span></a>
-  <a href="#p7"><span>Contact</span></a>
-</nav>
+<nav id="sidenav"><a href="#p0" class="active"><span>Open</span></a><a href="#p1"><span>Identity</span></a><a href="#p2"><span>Ethos</span></a><a href="#p3"><span>Services</span></a><a href="#p4"><span>Why Dean</span></a><a href="#p5"><span>Process</span></a><a href="#p6"><span>Pricing</span></a><a href="#p7"><span>Contact</span></a></nav>
 
 <section class="panel" id="p0">
+  <canvas id="p0canvas"></canvas>
   <div class="p0-eyebrow">Veteran-Owned &amp; Operated &nbsp;·&nbsp; Tennessee</div>
   <div class="p0-logo-wrap">
     <svg viewBox="0 0 424 145" xmlns="http://www.w3.org/2000/svg" style="width:min(500px,88vw);height:auto;">
-      <defs>
-        <linearGradient id="gN" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1565a8"/><stop offset="100%" stop-color="#29a3d8"/></linearGradient>
-        <linearGradient id="gAR" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1060a0"/><stop offset="100%" stop-color="#1e80c8"/></linearGradient>
-        <linearGradient id="gTri" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#e0f4ff"/><stop offset="100%" stop-color="#4aaee0"/></linearGradient>
-      </defs>
+      <defs><linearGradient id="gN" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1565a8"/><stop offset="100%" stop-color="#29a3d8"/></linearGradient><linearGradient id="gAR" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1060a0"/><stop offset="100%" stop-color="#1e80c8"/></linearGradient><linearGradient id="gTri" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#e0f4ff"/><stop offset="100%" stop-color="#4aaee0"/></linearGradient></defs>
       <rect x="0" y="0" width="14" height="100" fill="#0c1c36"/><rect x="0" y="0" width="66" height="14" fill="#0c1c36"/><rect x="0" y="86" width="66" height="14" fill="#0c1c36"/><rect x="58" y="0" width="14" height="30" fill="#0c1c36"/><rect x="58" y="70" width="14" height="30" fill="#0c1c36"/><rect x="68" y="26" width="10" height="48" fill="#0c1c36"/><rect x="0" y="36" width="70" height="10" fill="#060e1c"/><rect x="0" y="54" width="70" height="10" fill="#060e1c"/><rect x="0" y="36" width="70" height="1.5" fill="rgba(255,255,255,0.10)"/><rect x="0" y="54" width="70" height="1.5" fill="rgba(255,255,255,0.10)"/>
       <rect x="106" y="0" width="14" height="100" fill="#0c1c36"/><rect x="106" y="0" width="82" height="14" fill="#0c1c36"/><rect x="106" y="43" width="66" height="14" fill="#0c1c36"/><rect x="106" y="86" width="82" height="14" fill="#0c1c36"/>
       <polygon points="212,100 230,100 252,0 234,0" fill="#0c1c36"/><polygon points="258,0 276,0 298,100 278,100" fill="url(#gAR)"/><rect x="224" y="62" width="64" height="14" fill="#0a1828"/><polygon points="238,2 272,2 262,54 248,54" fill="url(#gTri)"/>
@@ -285,111 +233,25 @@ footer span:last-child{color:var(--acc-dim);}
   <div class="p0-scroll">Scroll</div>
 </section>
 
-<section class="panel" id="p1">
-  <div class="p1-vignette"></div>
-  <div class="p1-content">
-    <div class="p1-eyebrow">Veteran-Owned &nbsp;·&nbsp; Tennessee</div>
-    <div class="p1-h">Secure<br>your digital<br>foundation.<em>Strength &amp; beauty<br>in everything we build.</em></div>
-    <div class="p1-cta">
-      <button class="btn-open" onclick="document.getElementById('p7').scrollIntoView({behavior:'smooth'})">Let Us Contact You</button>
-      <button class="btn-text" onclick="document.getElementById('p3').scrollIntoView({behavior:'smooth'})">Our Services ↓</button>
-    </div>
-  </div>
-</section>
+<section class="panel" id="p1"><canvas id="p1canvas"></canvas><div class="p1-vignette"></div><div class="p1-content"><div class="p1-eyebrow">Veteran-Owned &nbsp;·&nbsp; Tennessee</div><div class="p1-h">Secure<br>your digital<br>foundation.<em>Strength &amp; beauty<br>in everything we build.</em></div><div class="p1-cta"><button class="btn-open" onclick="document.getElementById('p7').scrollIntoView({behavior:'smooth'})">Let Us Contact You</button><button class="btn-text" onclick="document.getElementById('p3').scrollIntoView({behavior:'smooth'})">Our Services ↓</button></div></div></section>
 
-<section class="panel" id="p2">
-  <div class="p2-inner">
-    <div class="p2-left">
-      <div class="p2-num">4+</div>
-      <div class="p2-label">The Veteran Advantage</div>
-      <div class="p2-h">Mission-ready.<br><em>Every time.</em></div>
-    </div>
-    <div class="p2-rule-v"></div>
-    <div class="p2-right">
-      <p><strong>Years of military service</strong> shaped a work ethic built on precision, accountability, and results.<br/><br/>We bring those qualities to every client engagement — <strong>no exceptions, no excuses, no shortcuts.</strong><br/><br/><strong>Discipline. Precision. Performance.</strong> Not buzzwords. A way of operating.</p>
-    </div>
-  </div>
-</section>
+<section class="panel" id="p2"><canvas id="p2canvas"></canvas><div class="p2-inner"><div class="p2-left"><div class="p2-num">4+</div><div class="p2-label">The Veteran Advantage</div><div class="p2-h">Mission-ready.<br><em>Every time.</em></div></div><div class="p2-rule-v"></div><div class="p2-right"><p><strong>Years of military service</strong> shaped a work ethic built on precision, accountability, and results.<br/><br/>We bring those qualities to every client engagement — <strong>no exceptions, no excuses, no shortcuts.</strong><br/><br/><strong>Discipline. Precision. Performance.</strong> Not buzzwords. A way of operating.</p></div></div></section>
 
-<section class="panel" id="p3">
-  <div class="p3-label">What We Deploy</div>
-  <div class="services-list">
-    <div class="svc-item"><span class="svc-n">01</span><span class="svc-name">Network Security</span><span class="svc-desc">Audits, penetration testing, hardened defenses — built for your environment.</span><span class="svc-arrow">→</span></div>
-    <div class="svc-item"><span class="svc-n">02</span><span class="svc-name">Site Design &amp; Build</span><span class="svc-desc">Custom sites that load fast, look sharp, and represent your business with authority.</span><span class="svc-arrow">→</span></div>
-    <div class="svc-item"><span class="svc-n">03</span><span class="svc-name">Web Administration</span><span class="svc-desc">Ongoing management so your platform stays secure, fast, and always mission-ready.</span><span class="svc-arrow">→</span></div>
-  </div>
-</section>
+<section class="panel" id="p3"><canvas id="p3canvas"></canvas><div class="p3-label">What We Deploy</div><div class="services-list"><div class="svc-item"><span class="svc-n">01</span><span class="svc-name">Network Security</span><span class="svc-desc">Audits, penetration testing, hardened defenses — built for your environment.</span><span class="svc-arrow">→</span></div><div class="svc-item"><span class="svc-n">02</span><span class="svc-name">Site Design &amp; Build</span><span class="svc-desc">Custom sites that load fast, look sharp, and represent your business with authority.</span><span class="svc-arrow">→</span></div><div class="svc-item"><span class="svc-n">03</span><span class="svc-name">Web Administration</span><span class="svc-desc">Ongoing management so your platform stays secure, fast, and always mission-ready.</span><span class="svc-arrow">→</span></div></div></section>
 
-<section class="panel" id="p4">
-  <div class="p4-label">Why Dean</div>
-  <div class="vs-rows">
-    <div class="vs-row header"><div class="vs-cell topic">What you need</div><div class="vs-cell head-d">Dean IS</div><div class="vs-cell head-o">Wix / Squarespace</div></div>
-    <div class="vs-row"><div class="vs-cell topic">Security</div><div class="vs-cell dean"><span class="chk">✓</span>Custom threat monitoring &amp; penetration testing</div><div class="vs-cell"><span class="crs">—</span>Generic, shared platform security</div></div>
-    <div class="vs-row"><div class="vs-cell topic">Business Email</div><div class="vs-cell dean"><span class="chk">✓</span>Branded email included in your package</div><div class="vs-cell"><span class="crs">—</span>Requires a separate paid subscription</div></div>
-    <div class="vs-row"><div class="vs-cell topic">Data Ownership</div><div class="vs-cell dean"><span class="chk">✓</span>Your data stays yours. Always.</div><div class="vs-cell"><span class="crs">—</span>Platform harvests analytics for advertising</div></div>
-    <div class="vs-row"><div class="vs-cell topic">Human Contact</div><div class="vs-cell dean"><span class="chk">✓</span>A real person. Direct line. No ticket queue.</div><div class="vs-cell"><span class="crs">—</span>Ticket support. Hours to days for a reply.</div></div>
-    <div class="vs-row"><div class="vs-cell topic">Pricing</div><div class="vs-cell dean"><span class="chk">✓</span>Flat scope. No surprise fees. No paywalls.</div><div class="vs-cell"><span class="crs">—</span>Limited base plans. Features cost extra.</div></div>
-  </div>
-</section>
+<!-- P4+P5 wrapper for shared vine -->
+<div style="position:relative;">
+<canvas id="vineCanvas"></canvas>
+<section class="panel" id="p4"><div class="p4-label">Why Dean</div><div class="vs-rows"><div class="vs-row header"><div class="vs-cell topic">What you need</div><div class="vs-cell head-d">Dean IS</div><div class="vs-cell head-o">Wix / Squarespace</div></div><div class="vs-row"><div class="vs-cell topic">Security</div><div class="vs-cell dean"><span class="chk">✓</span>Custom threat monitoring &amp; penetration testing</div><div class="vs-cell"><span class="crs">—</span>Generic, shared platform security</div></div><div class="vs-row"><div class="vs-cell topic">Business Email</div><div class="vs-cell dean"><span class="chk">✓</span>Branded email included in your package</div><div class="vs-cell"><span class="crs">—</span>Requires a separate paid subscription</div></div><div class="vs-row"><div class="vs-cell topic">Data Ownership</div><div class="vs-cell dean"><span class="chk">✓</span>Your data stays yours. Always.</div><div class="vs-cell"><span class="crs">—</span>Platform harvests analytics for advertising</div></div><div class="vs-row"><div class="vs-cell topic">Human Contact</div><div class="vs-cell dean"><span class="chk">✓</span>A real person. Direct line. No ticket queue.</div><div class="vs-cell"><span class="crs">—</span>Ticket support. Hours to days for a reply.</div></div><div class="vs-row"><div class="vs-cell topic">Pricing</div><div class="vs-cell dean"><span class="chk">✓</span>Flat scope. No surprise fees. No paywalls.</div><div class="vs-cell"><span class="crs">—</span>Limited base plans. Features cost extra.</div></div></div></section>
+<section class="panel" id="p5"><div class="p5-inner"><div class="p5-label">The Engagement Process</div><div class="steps-line"><div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 01</div><div class="step-h">Discovery Call</div><p class="step-p">Assess your digital posture, goals, and vulnerabilities. Free. Thirty minutes. No pressure.</p></div><div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 02</div><div class="step-h">Mission Brief</div><p class="step-p">A tailored proposal — scope, timeline, deliverables. No fluff. Just the plan.</p></div><div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 03</div><div class="step-h">Deployment</div><p class="step-p">Precision execution with regular updates. You always know where things stand.</p></div><div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 04</div><div class="step-h">Debrief &amp; Scale</div><p class="step-p">Review, measure, advance. The mission doesn't end at launch.</p></div></div></div></section>
+</div>
 
-<section class="panel" id="p5">
-  <div class="p5-inner">
-    <div class="p5-label">The Engagement Process</div>
-    <div class="steps-line">
-      <div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 01</div><div class="step-h">Discovery Call</div><p class="step-p">Assess your digital posture, goals, and vulnerabilities. Free. Thirty minutes. No pressure.</p></div>
-      <div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 02</div><div class="step-h">Mission Brief</div><p class="step-p">A tailored proposal — scope, timeline, deliverables. No fluff. Just the plan.</p></div>
-      <div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 03</div><div class="step-h">Deployment</div><p class="step-p">Precision execution with regular updates. You always know where things stand.</p></div>
-      <div class="step-item"><div class="step-dot"></div><div class="step-n-label">Step 04</div><div class="step-h">Debrief &amp; Scale</div><p class="step-p">Review, measure, advance. The mission doesn't end at launch.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="panel" id="p6">
-  <div class="p6-label">Pricing</div>
-  <div class="p6-inner">
-    <div class="p6-top">
-      <div class="p6-h">Built for<br>every<br><em>budget.</em></div>
-      <p class="p6-sub">Transparent, flexible, and always upfront. If a package is out of reach, reach out anyway — we will find a way.</p>
-    </div>
-    <div class="p6-pillars">
-      <div class="pillar"><span class="pillar-i">i.</span><h4>No Hidden Fees</h4><p>What we quote is what you pay. No fine print.</p></div>
-      <div class="pillar"><span class="pillar-i">ii.</span><h4>Flexible Scope</h4><p>Payment plans and phased approaches available.</p></div>
-      <div class="pillar"><span class="pillar-i">iii.</span><h4>Right-Sized</h4><p>No upselling on things you don't need.</p></div>
-    </div>
-    <div class="p6-cta-row">
-      <p class="p6-cta-text">Every service tier, every price — no gatekeeping.</p>
-      <a class="btn-sheet" href="https://docs.google.com/document/d/1iUgqObdBKjjNG_cQbdSDZoA7yP0syNPN/edit?usp=sharing" target="_blank" rel="noopener">View Pricing Sheet</a>
-    </div>
-  </div>
-</section>
+<section class="panel" id="p6"><div class="p6-label">Pricing</div><div class="p6-inner"><div class="p6-top"><div class="p6-h">Built for<br>every<br><em>budget.</em></div><p class="p6-sub">Transparent, flexible, and always upfront. If a package is out of reach, reach out anyway — we will find a way.</p></div><div class="p6-pillars"><div class="pillar"><span class="pillar-i">i.</span><h4>No Hidden Fees</h4><p>What we quote is what you pay. No fine print.</p></div><div class="pillar"><span class="pillar-i">ii.</span><h4>Flexible Scope</h4><p>Payment plans and phased approaches available.</p></div><div class="pillar"><span class="pillar-i">iii.</span><h4>Right-Sized</h4><p>No upselling on things you don't need.</p></div></div><div class="p6-cta-row"><p class="p6-cta-text">Every service tier, every price — no gatekeeping.</p><a class="btn-sheet" href="https://docs.google.com/document/d/1iUgqObdBKjjNG_cQbdSDZoA7yP0syNPN/edit?usp=sharing" target="_blank" rel="noopener">View Pricing Sheet</a></div></div></section>
 
 <section class="panel" id="p7">
-  <div class="p7-left">
-    <div class="p7-vignette"></div>
-    <div class="p7-left-content">
-      <div class="p7-label">Ready to Start</div>
-      <div class="p7-h">Let us<em>contact you.</em></div>
-      <div class="p7-direct">
-        <a class="p7-link" href="mailto:management@deaninformationsystems.com"><div class="p7-link-dot"></div>management@deaninformationsystems.com</a>
-        <a class="p7-link" href="tel:+16156513603"><div class="p7-link-dot"></div>(615) 651-3603</a>
-      </div>
-    </div>
-  </div>
-  <div class="p7-right">
-    <div class="form-wrap" id="contactForm">
-      <div class="f2">
-        <div class="fg"><label>First Name</label><input type="text" id="fn" placeholder="Jane" autocomplete="given-name"/></div>
-        <div class="fg"><label>Last Name</label><input type="text" id="ln" placeholder="Smith" autocomplete="family-name"/></div>
-      </div>
-      <div class="fg"><label>Email</label><input type="email" id="em" placeholder="jane@yourbusiness.com" autocomplete="email"/></div>
-      <div class="fg"><label>Phone</label><input type="tel" id="ph" placeholder="(615) 555-0100" autocomplete="tel"/></div>
-      <div class="fg"><label>Business</label><input type="text" id="bz" placeholder="Acme Co." autocomplete="organization"/></div>
-      <div class="fg"><label>Industry</label><select id="bt" onchange="hBt()"><option value="" disabled selected>Select your industry</option><option>Retail</option><option>Restaurant / Food and Beverage</option><option>Healthcare / Medical</option><option>Legal / Professional Services</option><option>Construction / Trades</option><option>Real Estate</option><option>Technology</option><option>Non-Profit</option><option>Education</option><option>Fitness / Wellness</option><option>Creative / Marketing Agency</option><option>Other</option></select></div>
-      <div class="fg" id="otherField"><label>Describe your business</label><textarea id="od" placeholder="Tell us a little about what you do..."></textarea></div>
-      <button class="btn-submit" id="subBtn" onclick="submitForm()">Send Message</button>
-    </div>
-    <div class="form-success" id="formSuccess"><h3>Thank you.</h3><p>We'll be in touch within one business day.</p></div>
-  </div>
+  <canvas id="p7canvas"></canvas>
+  <div class="p7-left"><div class="p7-vignette"></div><div class="p7-left-content"><div class="p7-label">Ready to Start</div><div class="p7-h">Let us<em>contact you.</em></div><div class="p7-direct"><a class="p7-link" href="mailto:management@deaninformationsystems.com"><div class="p7-link-dot"></div>management@deaninformationsystems.com</a><a class="p7-link" href="tel:+16156513603"><div class="p7-link-dot"></div>(615) 651-3603</a></div></div></div>
+  <div class="p7-right"><div class="form-wrap" id="contactForm"><div class="f2"><div class="fg"><label>First Name</label><input type="text" id="fn" placeholder="Jane" autocomplete="given-name"/></div><div class="fg"><label>Last Name</label><input type="text" id="ln" placeholder="Smith" autocomplete="family-name"/></div></div><div class="fg"><label>Email</label><input type="email" id="em" placeholder="jane@yourbusiness.com" autocomplete="email"/></div><div class="fg"><label>Phone</label><input type="tel" id="ph" placeholder="(615) 555-0100" autocomplete="tel"/></div><div class="fg"><label>Business</label><input type="text" id="bz" placeholder="Acme Co." autocomplete="organization"/></div><div class="fg"><label>Industry</label><select id="bt" onchange="hBt()"><option value="" disabled selected>Select your industry</option><option>Retail</option><option>Restaurant / Food and Beverage</option><option>Healthcare / Medical</option><option>Legal / Professional Services</option><option>Construction / Trades</option><option>Real Estate</option><option>Technology</option><option>Non-Profit</option><option>Education</option><option>Fitness / Wellness</option><option>Creative / Marketing Agency</option><option>Other</option></select></div><div class="fg" id="otherField"><label>Describe your business</label><textarea id="od" placeholder="Tell us a little about what you do..."></textarea></div><button class="btn-submit" id="subBtn" onclick="submitForm()">Send Message</button></div><div class="form-success" id="formSuccess"><h3>Thank you.</h3><p>We'll be in touch within one business day.</p></div></div>
 </section>
 
 <footer><span>Dean Information Systems</span><span>&copy; 2026 All rights reserved.</span><span>Veteran-Owned &amp; Operated</span></footer>
@@ -399,514 +261,352 @@ footer span:last-child{color:var(--acc-dim);}
 <script>
 (function(){emailjs.init({publicKey:"C3dhaIQj0sAr8XxMf"});})();
 
-/* ══════════════════════════════════════
-   FLORA ENGINE — Simple 2D, no twinkling
-   ══════════════════════════════════════ */
-var FC=document.getElementById('floraCanvas'),
-    ctx=FC.getContext('2d'), W, H, mob;
+var mob=window.innerWidth<=900;
+function sRng(s){return function(){s=(s*16807)%2147483647;return(s-1)/2147483646;};}
 
-function resize(){
-  W=FC.width=window.innerWidth;
-  H=FC.height=document.documentElement.scrollHeight;
-  FC.style.cssText='position:absolute;top:0;left:0;width:100%;height:'+H+'px;pointer-events:none;z-index:1;';
-  mob=window.innerWidth<=900;
+var COLS=[[220,20,60],[255,20,100],[200,30,140],[160,30,200],[100,40,220],[40,120,230],[230,60,80],[255,80,150],[180,20,180],[80,50,200]];
+function cs(c,a){return'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')';}
+
+/* ── PETAL PRIMITIVES ── */
+function ptl(ctx,cx,cy,a,l,w,c,al,bl){
+  if(bl<.02||al<.02)return;
+  var L=l*bl,W=w*bl;
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(a);
+  ctx.beginPath();ctx.moveTo(0,0);
+  ctx.bezierCurveTo(W,-L*.3,W*.65,-L*.82,0,-L);
+  ctx.bezierCurveTo(-W*.65,-L*.82,-W,-L*.3,0,0);
+  ctx.fillStyle=cs(c,al);ctx.fill();ctx.restore();
 }
-resize();
-
-function pRect(id){var e=document.getElementById(id);if(!e)return{x:0,y:0,w:W,h:H};return{x:e.offsetLeft,y:e.offsetTop,w:e.offsetWidth,h:e.offsetHeight};}
-function sP(id){var r=pRect(id),s=window.scrollY||window.pageYOffset,wH=window.innerHeight,t=r.y-s;return Math.max(0,Math.min(1,(wH-t)/(wH+r.h)));}
-
-/* Seeded RNG */
-function sRng(seed){var s=seed;return function(){s=(s*16807)%2147483647;return(s-1)/2147483646;};}
-
-/* ── COLORS — vivid, saturated ── */
-var COLS=[
-  [220,20,60],   // crimson
-  [255,20,100],  // hot pink
-  [200,30,140],  // magenta
-  [160,30,200],  // purple
-  [100,40,220],  // deep violet
-  [40,120,230],  // bright blue
-  [230,60,80],   // coral red
-  [255,80,150],  // rose
-  [180,20,180],  // fuchsia
-  [80,50,200],   // indigo
-];
-
-function colStr(c,a){return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')';}
-
-/* ── PETAL — simple bezier ── */
-function petal(cx,cy,ang,len,wid,c,a,bl){
-  if(bl<0.02||a<0.02)return;
-  var l=len*bl, w=wid*bl;
-  ctx.save(); ctx.translate(cx,cy); ctx.rotate(ang);
-  ctx.beginPath(); ctx.moveTo(0,0);
-  ctx.bezierCurveTo(w,-l*.3,w*.65,-l*.82,0,-l);
-  ctx.bezierCurveTo(-w*.65,-l*.82,-w,-l*.3,0,0);
-  ctx.closePath();
-  ctx.fillStyle=colStr(c,a);
-  ctx.fill();
-  ctx.restore();
-}
-
-function pointPetal(cx,cy,ang,len,wid,c,a,bl){
-  if(bl<0.02||a<0.02)return;
-  var l=len*bl, w=wid*bl;
-  ctx.save(); ctx.translate(cx,cy); ctx.rotate(ang);
-  ctx.beginPath(); ctx.moveTo(0,0);
-  ctx.bezierCurveTo(w*1.3,-l*.22,w*.35,-l*.72,0,-l);
-  ctx.bezierCurveTo(-w*.35,-l*.72,-w*1.3,-l*.22,0,0);
-  ctx.closePath();
-  ctx.fillStyle=colStr(c,a);
-  ctx.fill();
-  ctx.restore();
+function pptl(ctx,cx,cy,a,l,w,c,al,bl){
+  if(bl<.02||al<.02)return;
+  var L=l*bl,W=w*bl;
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(a);
+  ctx.beginPath();ctx.moveTo(0,0);
+  ctx.bezierCurveTo(W*1.3,-L*.22,W*.35,-L*.72,0,-L);
+  ctx.bezierCurveTo(-W*.35,-L*.72,-W*1.3,-L*.22,0,0);
+  ctx.fillStyle=cs(c,al);ctx.fill();ctx.restore();
 }
 
 /* ── FLOWER TYPES ── */
-function dahlia(cx,cy,sz,bl,a,c){
-  if(bl<0.02)return;
-  var layers=[
-    {n:14,len:sz,wid:sz*.3,off:0},
-    {n:11,len:sz*.7,wid:sz*.25,off:.14},
-    {n:8,len:sz*.45,wid:sz*.18,off:.08},
-    {n:5,len:sz*.28,wid:sz*.13,off:.22}
-  ];
-  for(var li=0;li<layers.length;li++){
-    var L=layers[li];
-    var lb=Math.max(0,Math.min(1,(bl-li*.08)/.7));
-    if(lb<0.02)continue;
-    var dk=1-li*.12;
-    var cc=[Math.floor(c[0]*dk),Math.floor(c[1]*dk),Math.floor(c[2]*dk)];
-    for(var i=0;i<L.n;i++){
-      petal(cx,cy,(i/L.n)*Math.PI*2+L.off,L.len,L.wid,cc,a*lb*.9,lb);
-    }
+function dahlia(ctx,cx,cy,sz,bl,a,c){
+  if(bl<.02)return;
+  var L=[[14,1,.3,0],[11,.7,.25,.14],[8,.45,.18,.08],[5,.28,.13,.22]];
+  for(var i=0;i<L.length;i++){
+    var l=L[i],lb=Math.max(0,Math.min(1,(bl-i*.08)/.7));
+    if(lb<.02)continue;
+    var dk=1-i*.12,cc=[~~(c[0]*dk),~~(c[1]*dk),~~(c[2]*dk)];
+    for(var j=0;j<l[0];j++) ptl(ctx,cx,cy,(j/l[0])*Math.PI*2+l[3],sz*l[1],sz*l[2],cc,a*lb*.9,lb);
   }
-  if(bl>.3){
-    var ca=Math.min(1,(bl-.3)/.4)*a;
-    var cr=sz*.13*bl;
-    ctx.save();ctx.globalAlpha=ca;
-    ctx.fillStyle='rgba(255,200,50,0.9)';
-    ctx.beginPath();ctx.arc(cx,cy,cr,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(255,240,180,0.7)';
-    ctx.beginPath();ctx.arc(cx-cr*.25,cy-cr*.25,cr*.4,0,Math.PI*2);ctx.fill();
-    ctx.restore();
-  }
+  if(bl>.3){var ca=Math.min(1,(bl-.3)/.4)*a,cr=sz*.13*bl;ctx.save();ctx.globalAlpha=ca;ctx.fillStyle='rgba(255,200,50,.9)';ctx.beginPath();ctx.arc(cx,cy,cr,0,Math.PI*2);ctx.fill();ctx.restore();}
 }
-
-function lily(cx,cy,sz,bl,a,c){
-  if(bl<0.02)return;
-  for(var i=0;i<6;i++){
-    var ang=(i/6)*Math.PI*2-Math.PI/2;
-    pointPetal(cx,cy,ang,sz*1.15,sz*.3,c,a*bl*.9,bl);
-    var hi=[Math.min(255,c[0]+60),Math.min(255,c[1]+40),Math.min(255,c[2]+60)];
-    pointPetal(cx,cy,ang,sz*.55,sz*.1,hi,a*bl*.35,bl);
-  }
-  if(bl>.4){
-    var ca=Math.min(1,(bl-.4)/.3)*a;
-    ctx.save();ctx.globalAlpha=ca;
-    ctx.fillStyle='rgba(255,210,50,0.85)';
-    for(var s=0;s<6;s++){
-      var sa=(s/6)*Math.PI*2;
-      ctx.beginPath();ctx.arc(cx+Math.cos(sa)*sz*.16*bl,cy+Math.sin(sa)*sz*.16*bl,sz*.035*bl,0,Math.PI*2);ctx.fill();
-    }
-    ctx.restore();
-  }
+function lily(ctx,cx,cy,sz,bl,a,c){
+  if(bl<.02)return;
+  for(var i=0;i<6;i++){var ag=(i/6)*Math.PI*2-Math.PI/2;pptl(ctx,cx,cy,ag,sz*1.15,sz*.3,c,a*bl*.9,bl);pptl(ctx,cx,cy,ag,sz*.55,sz*.1,[Math.min(255,c[0]+60),Math.min(255,c[1]+40),Math.min(255,c[2]+60)],a*bl*.35,bl);}
+  if(bl>.4){var ca=Math.min(1,(bl-.4)/.3)*a;ctx.save();ctx.globalAlpha=ca;ctx.fillStyle='rgba(255,210,50,.85)';for(var s=0;s<6;s++){var sa=(s/6)*Math.PI*2;ctx.beginPath();ctx.arc(cx+Math.cos(sa)*sz*.16*bl,cy+Math.sin(sa)*sz*.16*bl,sz*.035*bl,0,Math.PI*2);ctx.fill();}ctx.restore();}
 }
-
-function clematis(cx,cy,sz,bl,a,c){
-  if(bl<0.02)return;
-  for(var i=0;i<8;i++){
-    var ang=(i/8)*Math.PI*2;
-    var cc=[Math.min(255,c[0]+20),c[1],Math.min(255,c[2]+30)];
-    petal(cx,cy,ang,sz*.95,sz*.22,cc,a*bl*.85,bl);
-    // white stripe
-    petal(cx,cy,ang,sz*.7,sz*.06,[255,240,250],a*bl*.3,bl);
-  }
-  if(bl>.35){
-    var ca=Math.min(1,(bl-.35)/.3)*a;
-    ctx.save();ctx.globalAlpha=ca;
-    ctx.fillStyle='rgba(180,50,180,0.9)';
-    ctx.beginPath();ctx.arc(cx,cy,sz*.1*bl,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(255,255,200,0.7)';
-    for(var s=0;s<5;s++){
-      var sa=(s/5)*Math.PI*2;
-      ctx.beginPath();ctx.arc(cx+Math.cos(sa)*sz*.06*bl,cy+Math.sin(sa)*sz*.06*bl,sz*.02*bl,0,Math.PI*2);ctx.fill();
-    }
-    ctx.restore();
-  }
+function clematis(ctx,cx,cy,sz,bl,a,c){
+  if(bl<.02)return;
+  for(var i=0;i<8;i++){var ag=(i/8)*Math.PI*2;ptl(ctx,cx,cy,ag,sz*.95,sz*.22,[Math.min(255,c[0]+20),c[1],Math.min(255,c[2]+30)],a*bl*.85,bl);ptl(ctx,cx,cy,ag,sz*.7,sz*.06,[255,240,250],a*bl*.3,bl);}
+  if(bl>.35){var ca=Math.min(1,(bl-.35)/.3)*a;ctx.save();ctx.globalAlpha=ca;ctx.fillStyle='rgba(180,50,180,.9)';ctx.beginPath();ctx.arc(cx,cy,sz*.1*bl,0,Math.PI*2);ctx.fill();ctx.restore();}
 }
-
-function rosette(cx,cy,sz,bl,a,c){
-  if(bl<0.02)return;
-  var layers=[
-    {n:10,len:sz*.9,wid:sz*.38,off:0},
-    {n:8,len:sz*.6,wid:sz*.3,off:.2},
-    {n:5,len:sz*.35,wid:sz*.22,off:.1}
-  ];
-  for(var li=0;li<layers.length;li++){
-    var L=layers[li];
-    var lb=Math.max(0,Math.min(1,(bl-li*.1)/.6));
-    if(lb<0.02)continue;
-    var dk=1-li*.1;
-    var cc=[Math.floor(c[0]*dk),Math.floor(c[1]*dk),Math.floor(c[2]*dk)];
-    for(var i=0;i<L.n;i++){
-      petal(cx,cy,(i/L.n)*Math.PI*2+L.off,L.len,L.wid,cc,a*lb*.85,lb);
-    }
-  }
-  if(bl>.4){
-    var ca=Math.min(1,(bl-.4)/.3)*a;
-    ctx.save();ctx.globalAlpha=ca;
-    ctx.fillStyle=colStr(c,.9);
-    ctx.beginPath();ctx.arc(cx,cy,sz*.08*bl,0,Math.PI*2);ctx.fill();
-    ctx.restore();
-  }
+function rosette(ctx,cx,cy,sz,bl,a,c){
+  if(bl<.02)return;
+  var L=[[10,.9,.38,0],[8,.6,.3,.2],[5,.35,.22,.1]];
+  for(var i=0;i<L.length;i++){var l=L[i],lb=Math.max(0,Math.min(1,(bl-i*.1)/.6));if(lb<.02)continue;var dk=1-i*.1,cc=[~~(c[0]*dk),~~(c[1]*dk),~~(c[2]*dk)];for(var j=0;j<l[0];j++)ptl(ctx,cx,cy,(j/l[0])*Math.PI*2+l[3],sz*l[1],sz*l[2],cc,a*lb*.85,lb);}
 }
+var TYPES=['dahlia','lily','clematis','rosette'];
+function drawF(ctx,t,cx,cy,sz,bl,a,c){if(t==='dahlia')dahlia(ctx,cx,cy,sz,bl,a,c);else if(t==='lily')lily(ctx,cx,cy,sz,bl,a,c);else if(t==='clematis')clematis(ctx,cx,cy,sz,bl,a,c);else rosette(ctx,cx,cy,sz,bl,a,c);}
 
 /* ── STEM ── */
-function stem(x1,y1,x2,y2,bl,a,thick){
-  if(bl<0.05||a<0.02)return;
-  var bx=x1+(x2-x1)*bl, by=y1+(y2-y1)*bl;
-  var mx=(x1+bx)/2+(x2-x1)*.12, my=(y1+by)/2;
-  ctx.save(); ctx.globalAlpha=a*Math.min(1,bl*2.5);
-  ctx.strokeStyle='rgba(20,55,15,0.75)';
-  ctx.lineWidth=thick||2.5; ctx.lineCap='round';
-  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.quadraticCurveTo(mx,my,bx,by); ctx.stroke();
+function drawStem(ctx,x1,y1,x2,y2,bl,a,th){
+  if(bl<.05||a<.02)return;
+  var bx=x1+(x2-x1)*bl,by=y1+(y2-y1)*bl,mx=(x1+bx)/2+(x2-x1)*.12;
+  ctx.save();ctx.globalAlpha=a*Math.min(1,bl*2.5);
+  ctx.strokeStyle='rgba(20,55,15,.7)';ctx.lineWidth=th||2.5;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.quadraticCurveTo(mx,(y1+by)/2,bx,by);ctx.stroke();
+  if(bl>.25){ctx.fillStyle='rgba(25,70,18,.5)';var lc=~~(bl*3);for(var i=1;i<=lc;i++){var t=i/(lc+1),lx=x1+(bx-x1)*t,ly=y1+(by-y1)*t,la=Math.atan2(by-y1,bx-x1)+(i%2?.85:-.85);ctx.save();ctx.translate(lx,ly);ctx.rotate(la);ctx.beginPath();ctx.ellipse(0,0,10+bl*8,4+bl*3,0,0,Math.PI*2);ctx.fill();ctx.restore();}}
+  ctx.restore();
+}
+
+/* ── VINE (for P4+P5) ── */
+function drawVine(ctx,pts,bl,a){
+  if(pts.length<2||bl<.02||a<.02)return;
+  var n=Math.max(2,Math.ceil(pts.length*bl));
+  ctx.save();ctx.globalAlpha=a*.7;
+  ctx.strokeStyle='rgba(20,55,15,.6)';ctx.lineWidth=2.8;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);
+  for(var i=1;i<n;i++){var px=(pts[i-1].x+pts[i].x)/2,py=(pts[i-1].y+pts[i].y)/2;ctx.quadraticCurveTo(pts[i-1].x,pts[i-1].y,px,py);}
+  ctx.stroke();
   // leaves
-  if(bl>.25){
-    var lc=Math.floor(bl*3);
-    ctx.fillStyle='rgba(25,70,18,0.55)';
-    for(var i=1;i<=lc;i++){
-      var t=i/(lc+1);
-      var lx=x1+(bx-x1)*t+(mx-x1)*t*(1-t)*2;
-      var ly=y1+(by-y1)*t+(my-y1)*t*(1-t)*2;
-      var la=Math.atan2(by-y1,bx-x1)+(i%2===0?.85:-.85);
-      ctx.save(); ctx.translate(lx,ly); ctx.rotate(la);
-      ctx.beginPath(); ctx.ellipse(0,0,10+bl*8,4+bl*3,0,0,Math.PI*2); ctx.fill();
-      ctx.restore();
+  ctx.fillStyle='rgba(25,70,18,.45)';
+  for(var i=2;i<n;i+=2){
+    var p=pts[i];if(!p)continue;
+    var la=(i%4===0?.9:-.9);
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(la);
+    ctx.beginPath();ctx.ellipse(0,0,14,5,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  }
+  // buds
+  for(var i=0;i<n;i++){
+    var p=pts[i];
+    if(!p.bud)continue;
+    var bb=Math.max(0,(bl-p.t)/.2);bb=Math.min(1,bb);
+    if(bb<.02)continue;
+    var bs=p.sz*bb;
+    ctx.globalAlpha=a*bb*.7;
+    for(var pe=0;pe<5;pe++){
+      var pa=(pe/5)*Math.PI*2;
+      ctx.fillStyle=cs(p.col,.7);
+      ctx.beginPath();ctx.ellipse(p.x+Math.cos(pa)*bs*.5,p.y+Math.sin(pa)*bs*.4,bs*.55,bs*.28,pa,0,Math.PI*2);ctx.fill();
     }
   }
   ctx.restore();
 }
 
-/* ── DRAW FLOWER BY TYPE ── */
-function drawFlower(type,cx,cy,sz,bl,a,c){
-  if(type==='dahlia') dahlia(cx,cy,sz,bl,a,c);
-  else if(type==='lily') lily(cx,cy,sz,bl,a,c);
-  else if(type==='clematis') clematis(cx,cy,sz,bl,a,c);
-  else if(type==='rosette') rosette(cx,cy,sz,bl,a,c);
-}
+/* ── FLORAL DEAN LETTERS for P7 ── */
+function buildFloralDean(cx,cy,sc,rng){
+  // simplified letter positions: D E A N
+  var letters=[];
+  var spacing=90*sc;
+  var startX=cx-spacing*1.5;
+  // Each letter = array of flower positions relative to letter origin
+  // D
+  var dPts=[];
+  for(var i=0;i<8;i++){var t=i/7;dPts.push({x:0,y:-40*sc+80*sc*t});} // vertical bar
+  for(var i=0;i<5;i++){var a=-Math.PI/2+Math.PI*(i/4);dPts.push({x:Math.cos(a)*35*sc+15*sc,y:Math.sin(a)*40*sc});} // curve
+  letters.push({ox:startX,oy:cy,pts:dPts});
+  // E
+  var ePts=[];
+  for(var i=0;i<7;i++){var t=i/6;ePts.push({x:0,y:-36*sc+72*sc*t});}
+  ePts.push({x:20*sc,y:-36*sc});ePts.push({x:40*sc,y:-36*sc});
+  ePts.push({x:15*sc,y:0});ePts.push({x:30*sc,y:0});
+  ePts.push({x:20*sc,y:36*sc});ePts.push({x:40*sc,y:36*sc});
+  letters.push({ox:startX+spacing,oy:cy,pts:ePts});
+  // A
+  var aPts=[];
+  for(var i=0;i<6;i++){var t=i/5;aPts.push({x:-20*sc+20*sc*t,y:36*sc-72*sc*t});}
+  for(var i=0;i<6;i++){var t=i/5;aPts.push({x:20*sc-20*sc*t,y:36*sc-72*sc*t});}
+  aPts.push({x:-12*sc,y:6*sc});aPts.push({x:0,y:6*sc});aPts.push({x:12*sc,y:6*sc});
+  letters.push({ox:startX+spacing*2,oy:cy,pts:aPts});
+  // N
+  var nPts=[];
+  for(var i=0;i<7;i++){var t=i/6;nPts.push({x:0,y:-36*sc+72*sc*t});}
+  for(var i=0;i<7;i++){var t=i/6;nPts.push({x:45*sc,y:-36*sc+72*sc*t});}
+  for(var i=0;i<4;i++){var t=i/3;nPts.push({x:t*45*sc,y:-36*sc+72*sc*t});}
+  letters.push({ox:startX+spacing*3,oy:cy,pts:nPts});
 
-/* ══════════════════════════════════════
-   BUILD GARDEN DATA (once, on resize)
-   ══════════════════════════════════════ */
-var G={};
-var TYPES=['dahlia','lily','clematis','rosette','dahlia','lily','dahlia','clematis'];
-
-function buildAll(){
-  resize();
-  var sc=mob?0.55:1;
-
-  /* ── P0: BIG bouquet behind logo ── */
-  var p0=pRect('p0'), r0=sRng(42);
-  var cx0=p0.x+p0.w*.5, cy0=p0.y+p0.h*.48;
-  var f0=[];
-  // 3 rings of flowers
-  var rings=[
-    {count:mob?6:10, minD:80*sc, maxD:160*sc, minS:45*sc, maxS:80*sc},
-    {count:mob?5:8,  minD:140*sc, maxD:240*sc, minS:35*sc, maxS:65*sc},
-    {count:mob?4:7,  minD:200*sc, maxD:320*sc, minS:25*sc, maxS:50*sc}
-  ];
-  for(var ri=0;ri<rings.length;ri++){
-    var R=rings[ri];
-    for(var i=0;i<R.count;i++){
-      var a=(i/R.count)*Math.PI*2+r0()*.4-Math.PI*.5;
-      var d=R.minD+r0()*(R.maxD-R.minD);
-      var sz=R.minS+r0()*(R.maxS-R.minS);
-      f0.push({
-        type:TYPES[Math.floor(r0()*TYPES.length)],
-        ox:Math.cos(a)*d, oy:Math.sin(a)*d*.7,
-        size:sz, col:COLS[Math.floor(r0()*COLS.length)],
-        delay:ri*.12+r0()*.2,
-        stemA:a+Math.PI
+  var flowers=[];
+  for(var li=0;li<letters.length;li++){
+    var L=letters[li];
+    for(var i=0;i<L.pts.length;i++){
+      var p=L.pts[i];
+      flowers.push({
+        x:L.ox+p.x, y:L.oy+p.y,
+        size:(6+rng()*8)*sc,
+        type:TYPES[~~(rng()*TYPES.length)],
+        col:COLS[~~(rng()*COLS.length)],
+        delay:li*.08+rng()*.15
       });
     }
   }
-  G.p0={cx:cx0,cy:cy0,f:f0};
-
-  /* ── P1: Explosive burst right side ── */
-  var p1=pRect('p1'), r1=sRng(137);
-  var cx1=p1.x+p1.w*(mob?.55:.65), cy1=p1.y+p1.h*.42;
-  var f1=[];
-  var bc=mob?12:22;
-  for(var i=0;i<bc;i++){
-    var a=(i/bc)*Math.PI*2+r1()*.6;
-    var d=(25+r1()*260)*sc;
-    var sz=(20+r1()*70)*sc;
-    f1.push({
-      type:TYPES[Math.floor(r1()*TYPES.length)],
-      ox:Math.cos(a)*d+(r1()-.5)*50*sc,
-      oy:Math.sin(a)*d*.75+(r1()-.5)*40*sc,
-      size:sz, col:COLS[Math.floor(r1()*COLS.length)],
-      delay:r1()*.35,
-      streakA:a
-    });
-  }
-  // color splash streaks
-  var streaks1=[];
-  for(var i=0;i<(mob?15:30);i++){
-    var a=r1()*Math.PI*2;
-    streaks1.push({
-      a:a, len:(100+r1()*250)*sc,
-      wid:1+r1()*4,
-      col:COLS[Math.floor(r1()*COLS.length)],
-      curve:(r1()-.5)*60*sc
-    });
-  }
-  G.p1={cx:cx1,cy:cy1,f:f1,streaks:streaks1};
-
-  /* ── P2: Garden from bottom-left ── */
-  var p2=pRect('p2'), r2=sRng(256);
-  var base2=p2.y+p2.h;
-  var left2=p2.x+(mob?p2.w*.15:p2.w*.02);
-  var f2=[];
-  var gc=mob?10:16;
-  for(var i=0;i<gc;i++){
-    var x=left2+(r2()*(mob?p2.w*.7:300))*sc;
-    var sh=(140+r2()*220)*sc;
-    var sz=(22+r2()*55)*sc;
-    f2.push({
-      type:TYPES[Math.floor(r2()*TYPES.length)],
-      bx:x, by:base2,
-      stemH:sh, size:sz,
-      col:COLS[Math.floor(r2()*COLS.length)],
-      delay:i*.05,
-      sway:(r2()-.5)*35
-    });
-  }
-  G.p2={f:f2,base:base2};
-
-  /* ── P3: Elegant vine ── */
-  var p3=pRect('p3'), r3=sRng(333);
-  var vine3=[];
-  var vc=mob?14:22;
-  for(var i=0;i<vc;i++){
-    vine3.push({
-      t:i/vc,
-      bud:r3()>.45,
-      sz:(5+r3()*14)*sc,
-      col:COLS[Math.floor(r3()*COLS.length)]
-    });
-  }
-  G.p3={vine:vine3,r:p3};
-
-  /* ── P7: Full bloom bouquet ── */
-  var p7=pRect('p7'), r7=sRng(777);
-  var cx7=p7.x+(mob?p7.w*.5:p7.w*.22);
-  var cy7=p7.y+p7.h*(mob?.35:.42);
-  var f7=[];
-  var fc7=mob?12:20;
-  for(var i=0;i<fc7;i++){
-    var a=(i/fc7)*Math.PI*2;
-    var d=(35+r7()*170)*sc;
-    var sz=(20+r7()*60)*sc;
-    f7.push({
-      type:TYPES[Math.floor(r7()*TYPES.length)],
-      ox:Math.cos(a)*d, oy:Math.sin(a)*d*.72,
-      size:sz, col:COLS[Math.floor(r7()*COLS.length)],
-      delay:r7()*.3,
-      stemL:(50+r7()*90)*sc,
-      stemA:Math.PI*.35+r7()*.45
-    });
-  }
-  G.p7={cx:cx7,cy:cy7,f:f7};
+  return flowers;
 }
-buildAll();
-window.addEventListener('resize',buildAll);
 
 /* ══════════════════════════════════════
-   RENDER
+   SCROLL HELPER
    ══════════════════════════════════════ */
-var startTime=Date.now();
+function sP(el){
+  var r=el.getBoundingClientRect(),wH=window.innerHeight;
+  return Math.max(0,Math.min(1,(wH-r.top)/(wH+r.height)));
+}
+
+/* ══════════════════════════════════════
+   PER-PANEL CANVAS SETUP & DATA
+   ══════════════════════════════════════ */
+var C0,C1,C2,C3,CV,C7;
+var x0,x1,x2,x3,xv,x7;
+var D={};
+
+function setup(){
+  mob=window.innerWidth<=900;
+  var sc=mob?.55:1;
+
+  // P0 canvas
+  var el0=document.getElementById('p0');
+  C0=document.getElementById('p0canvas');C0.width=el0.offsetWidth;C0.height=el0.offsetHeight;x0=C0.getContext('2d');
+  // P1
+  var el1=document.getElementById('p1');
+  C1=document.getElementById('p1canvas');C1.width=el1.offsetWidth;C1.height=el1.offsetHeight;x1=C1.getContext('2d');
+  // P2
+  var el2=document.getElementById('p2');
+  C2=document.getElementById('p2canvas');C2.width=el2.offsetWidth;C2.height=el2.offsetHeight;x2=C2.getContext('2d');
+  // P3
+  var el3=document.getElementById('p3');
+  C3=document.getElementById('p3canvas');C3.width=el3.offsetWidth;C3.height=el3.offsetHeight;x3=C3.getContext('2d');
+  // Vine canvas spans p4+p5 wrapper
+  var wrapper=document.getElementById('p4').parentElement;
+  CV=document.getElementById('vineCanvas');CV.width=wrapper.offsetWidth;CV.height=wrapper.offsetHeight;
+  CV.style.width=wrapper.offsetWidth+'px';CV.style.height=wrapper.offsetHeight+'px';
+  xv=CV.getContext('2d');
+  // P7
+  var el7=document.getElementById('p7');
+  C7=document.getElementById('p7canvas');C7.width=el7.offsetWidth;C7.height=el7.offsetHeight;x7=C7.getContext('2d');
+
+  // === BUILD DATA ===
+  var r0=sRng(42);
+  // P0: Big bouquet
+  var f0=[],cx0=C0.width*.5,cy0=C0.height*.48;
+  var rings=[{n:mob?6:10,min:80*sc,max:170*sc,sMin:45*sc,sMax:85*sc},{n:mob?5:8,min:150*sc,max:260*sc,sMin:35*sc,sMax:70*sc},{n:mob?4:7,min:220*sc,max:340*sc,sMin:25*sc,sMax:55*sc}];
+  for(var ri=0;ri<rings.length;ri++){var R=rings[ri];for(var i=0;i<R.n;i++){var a=(i/R.n)*Math.PI*2+r0()*.4-Math.PI*.5,d=R.min+r0()*(R.max-R.min),sz=R.sMin+r0()*(R.sMax-R.sMin);f0.push({type:TYPES[~~(r0()*4)],ox:Math.cos(a)*d,oy:Math.sin(a)*d*.7,size:sz,col:COLS[~~(r0()*COLS.length)],delay:ri*.12+r0()*.2,stemA:a+Math.PI});}}
+  D.p0={cx:cx0,cy:cy0,f:f0};
+
+  // P1: Burst
+  var r1=sRng(137),f1=[],cx1=C1.width*(mob?.55:.65),cy1=C1.height*.42;
+  var bc=mob?12:22;
+  for(var i=0;i<bc;i++){var a=(i/bc)*Math.PI*2+r1()*.6,d=(25+r1()*260)*sc,sz=(20+r1()*70)*sc;f1.push({type:TYPES[~~(r1()*4)],ox:Math.cos(a)*d+(r1()-.5)*50*sc,oy:Math.sin(a)*d*.75+(r1()-.5)*40*sc,size:sz,col:COLS[~~(r1()*COLS.length)],delay:r1()*.35,sa:a});}
+  var st1=[];for(var i=0;i<(mob?15:30);i++){st1.push({a:r1()*Math.PI*2,len:(100+r1()*250)*sc,w:1+r1()*4,col:COLS[~~(r1()*COLS.length)],cv:(r1()-.5)*60*sc});}
+  D.p1={cx:cx1,cy:cy1,f:f1,st:st1};
+
+  // P2: Garden from bottom
+  var r2=sRng(256),f2=[],base2=C2.height;
+  var gc=mob?10:16;
+  for(var i=0;i<gc;i++){var x=r2()*(mob?C2.width*.7:300)*sc+(mob?C2.width*.15:C2.width*.02);f2.push({type:TYPES[~~(r2()*4)],bx:x,stemH:(140+r2()*220)*sc,size:(22+r2()*55)*sc,col:COLS[~~(r2()*COLS.length)],delay:i*.05,sway:(r2()-.5)*35});}
+  D.p2={f:f2,base:base2};
+
+  // P3: Vine
+  var r3=sRng(333),vine3=[];
+  for(var i=0;i<(mob?14:22);i++)vine3.push({t:i/(mob?14:22),bud:r3()>.4,sz:(6+r3()*14)*sc,col:COLS[~~(r3()*COLS.length)]});
+  D.p3={vine:vine3};
+
+  // P4+P5 shared vine
+  var rv=sRng(444),vineP=[];
+  var vw=CV.width,vh=CV.height;
+  var vCount=mob?25:40;
+  for(var i=0;i<vCount;i++){
+    var t=i/vCount;
+    var x=vw*.05+t*vw*.9+Math.sin(t*3.5)*60*(mob?.4:1);
+    var y=vh*.15+Math.sin(t*2.8+1)*vh*.3+t*vh*.2;
+    vineP.push({x:x,y:y,t:t,bud:rv()>.35,sz:(7+rv()*16)*sc,col:COLS[~~(rv()*COLS.length)]});
+  }
+  D.vine={pts:vineP};
+
+  // P7: Garden from bottom + floral DEAN
+  var r7=sRng(777),f7=[];
+  var gc7=mob?14:24;
+  for(var i=0;i<gc7;i++){
+    var x=(C7.width/(gc7+1))*(i+1)+(r7()-.5)*40*sc;
+    f7.push({type:TYPES[~~(r7()*4)],bx:x,stemH:(100+r7()*200)*sc,size:(18+r7()*50)*sc,col:COLS[~~(r7()*COLS.length)],delay:i*.03,sway:(r7()-.5)*25});
+  }
+  var deanFlowers=buildFloralDean(mob?C7.width*.5:C7.width*.35, C7.height*.32, sc, sRng(888));
+  D.p7={gardenF:f7,base:C7.height,deanF:deanFlowers};
+}
+setup();
+window.addEventListener('resize',setup);
+
+/* ══════════════════════════════════════
+   RENDER LOOP
+   ══════════════════════════════════════ */
+var t0=Date.now();
 
 function render(){
-  ctx.clearRect(0,0,W,H);
-  var t=(Date.now()-startTime)/1000;
+  var t=(Date.now()-t0)/1000;
   var intro=Math.min(1,t/3);
 
-  /* ── P0 ── */
+  // P0
+  x0.clearRect(0,0,C0.width,C0.height);
   (function(){
-    var g=G.p0; if(!g)return;
-    var sp=sP('p0');
-    var a=sp<.5?1:Math.max(0,1-(sp-.5)*3);
-    a*=intro;
-    if(a<0.02)return;
+    var g=D.p0,sp=sP(document.getElementById('p0'));
+    var a=sp<.5?1:Math.max(0,1-(sp-.5)*3);a*=intro;
+    if(a<.02)return;
     for(var i=0;i<g.f.length;i++){
-      var f=g.f[i];
-      var bl=Math.max(0,Math.min(1,(intro-f.delay)/.8));
-      if(bl<0.02)continue;
-      var fx=g.cx+f.ox, fy=g.cy+f.oy;
-      if(f.stemA!==undefined){
-        var sx=fx+Math.cos(f.stemA)*f.size*1.1;
-        var sy=fy+Math.sin(f.stemA)*f.size*1.1;
-        stem(fx,fy,sx,sy,bl,a*.5,1.8);
-      }
-      drawFlower(f.type,fx,fy,f.size,bl,a*.9,f.col);
+      var f=g.f[i],bl=Math.max(0,Math.min(1,(intro-f.delay)/.8));
+      if(bl<.02)continue;
+      var fx=g.cx+f.ox,fy=g.cy+f.oy;
+      if(f.stemA!==undefined)drawStem(x0,fx,fy,fx+Math.cos(f.stemA)*f.size*1.1,fy+Math.sin(f.stemA)*f.size*1.1,bl,a*.45,1.8);
+      drawF(x0,f.type,fx,fy,f.size,bl,a*.9,f.col);
     }
   })();
 
-  /* ── P1 ── */
+  // P1
+  x1.clearRect(0,0,C1.width,C1.height);
   (function(){
-    var g=G.p1; if(!g)return;
-    var sp=sP('p1');
+    var g=D.p1,sp=sP(document.getElementById('p1'));
     var bloom=Math.max(0,Math.min(1,(sp-.12)/.45));
     var a=sp>.88?Math.max(0,1-(sp-.88)*6):Math.min(1,sp*3.5);
-    if(a<0.02||bloom<0.02)return;
-
-    // color streaks first (behind flowers)
-    if(g.streaks){
-      ctx.save();
-      for(var i=0;i<g.streaks.length;i++){
-        var s=g.streaks[i];
-        var sb=Math.max(0,Math.min(1,(bloom-.05)/.6));
-        if(sb<0.02)continue;
-        ctx.globalAlpha=a*sb*.55;
-        ctx.strokeStyle=colStr(s.col,.7);
-        ctx.lineWidth=s.wid*sb;
-        ctx.lineCap='round';
-        ctx.beginPath();
-        ctx.moveTo(g.cx,g.cy);
-        var ex=g.cx+Math.cos(s.a)*s.len*sb;
-        var ey=g.cy+Math.sin(s.a)*s.len*sb;
-        var mx=g.cx+Math.cos(s.a)*s.len*.5*sb+s.curve;
-        var my=g.cy+Math.sin(s.a)*s.len*.5*sb-s.curve*.5;
-        ctx.quadraticCurveTo(mx,my,ex,ey);
-        ctx.stroke();
-      }
-      ctx.restore();
+    if(a<.02||bloom<.02)return;
+    // streaks
+    x1.save();
+    for(var i=0;i<g.st.length;i++){
+      var s=g.st[i],sb=Math.max(0,Math.min(1,(bloom-.05)/.6));if(sb<.02)continue;
+      x1.globalAlpha=a*sb*.55;x1.strokeStyle=cs(s.col,.7);x1.lineWidth=s.w*sb;x1.lineCap='round';
+      x1.beginPath();x1.moveTo(g.cx,g.cy);
+      var ex=g.cx+Math.cos(s.a)*s.len*sb,ey=g.cy+Math.sin(s.a)*s.len*sb;
+      x1.quadraticCurveTo(g.cx+Math.cos(s.a)*s.len*.5*sb+s.cv,g.cy+Math.sin(s.a)*s.len*.5*sb-s.cv*.5,ex,ey);x1.stroke();
     }
-
-    for(var i=0;i<g.f.length;i++){
-      var f=g.f[i];
-      var bl=Math.max(0,Math.min(1,(bloom-f.delay)/.55));
-      if(bl<0.02)continue;
-      var fx=g.cx+f.ox*bl, fy=g.cy+f.oy*bl;
-      drawFlower(f.type,fx,fy,f.size,bl,a*.8,f.col);
-    }
+    x1.restore();
+    for(var i=0;i<g.f.length;i++){var f=g.f[i],bl=Math.max(0,Math.min(1,(bloom-f.delay)/.55));if(bl<.02)continue;drawF(x1,f.type,g.cx+f.ox*bl,g.cy+f.oy*bl,f.size,bl,a*.8,f.col);}
   })();
 
-  /* ── P2 ── */
+  // P2
+  x2.clearRect(0,0,C2.width,C2.height);
   (function(){
-    var g=G.p2; if(!g)return;
-    var sp=sP('p2');
+    var g=D.p2,sp=sP(document.getElementById('p2'));
     var bloom=Math.max(0,Math.min(1,(sp-.08)/.5));
     var a=sp>.92?Math.max(0,1-(sp-.92)*6):Math.min(1,(sp-.03)*4);
-    if(a<0.02||bloom<0.02)return;
+    if(a<.02||bloom<.02)return;
     for(var i=0;i<g.f.length;i++){
-      var f=g.f[i];
-      var bl=Math.max(0,Math.min(1,(bloom-f.delay)/.65));
-      if(bl<0.02)continue;
-      var tx=f.bx+f.sway*bl;
-      var ty=f.by-f.stemH*bl;
-      stem(f.bx,f.by,tx,ty,bl,a*.65,2.2);
-      var fb=Math.max(0,(bl-.35)/.65);
-      if(fb>0.02) drawFlower(f.type,tx,ty,f.size,fb,a*.85,f.col);
+      var f=g.f[i],bl=Math.max(0,Math.min(1,(bloom-f.delay)/.65));if(bl<.02)continue;
+      var tx=f.bx+f.sway*bl,ty=g.base-f.stemH*bl;
+      drawStem(x2,f.bx,g.base,tx,ty,bl,a*.65,2.2);
+      var fb=Math.max(0,(bl-.35)/.65);if(fb>.02)drawF(x2,f.type,tx,ty,f.size,fb,a*.85,f.col);
     }
   })();
 
-  /* ── P3 ── */
+  // P3
+  x3.clearRect(0,0,C3.width,C3.height);
   (function(){
-    var g=G.p3; if(!g||!g.vine)return;
-    var sp=sP('p3');
+    var g=D.p3,sp=sP(document.getElementById('p3'));
     var bloom=Math.max(0,Math.min(1,(sp-.1)/.45));
     var a=sp>.92?Math.max(0,1-(sp-.92)*6):Math.min(1,(sp-.04)*4);
-    if(a<0.02||bloom<0.02)return;
-    var r=g.r;
-    var sx=r.x+r.w*(mob?.78:.52), sy=r.y+r.h*.04;
-    var ex=r.x+r.w*(mob?.92:.82), ey=r.y+r.h*.96;
+    if(a<.02||bloom<.02)return;
+    var sx=C3.width*(mob?.78:.52),sy=C3.height*.04,ex=C3.width*(mob?.92:.82),ey=C3.height*.96;
     var pts=[];
-    for(var i=0;i<g.vine.length;i++){
-      var v=g.vine[i];
-      if(v.t>bloom)break;
-      pts.push({
-        x:sx+(ex-sx)*v.t+Math.sin(v.t*4.5)*45*(mob?.5:1),
-        y:sy+(ey-sy)*v.t,
-        d:v
-      });
-    }
-    if(pts.length>1){
-      ctx.save(); ctx.globalAlpha=a*.6;
-      ctx.strokeStyle='rgba(20,55,15,0.6)';
-      ctx.lineWidth=2.2; ctx.lineCap='round';
-      ctx.beginPath(); ctx.moveTo(pts[0].x,pts[0].y);
-      for(var i=1;i<pts.length;i++){
-        var px=(pts[i-1].x+pts[i].x)/2, py=(pts[i-1].y+pts[i].y)/2;
-        ctx.quadraticCurveTo(pts[i-1].x,pts[i-1].y,px,py);
-      }
-      ctx.stroke();
-      // buds
-      for(var i=0;i<pts.length;i++){
-        var p=pts[i];
-        if(!p.d.bud)continue;
-        var bb=Math.max(0,(bloom-p.d.t)/.25);
-        bb=Math.min(1,bb);
-        if(bb<0.02)continue;
-        var bs=p.d.sz*bb;
-        ctx.globalAlpha=a*bb*.65;
-        for(var pe=0;pe<5;pe++){
-          var pa=(pe/5)*Math.PI*2;
-          ctx.fillStyle=colStr(p.d.col,.7);
-          ctx.beginPath();
-          ctx.ellipse(p.x+Math.cos(pa)*bs*.5,p.y+Math.sin(pa)*bs*.4,bs*.55,bs*.28,pa,0,Math.PI*2);
-          ctx.fill();
-        }
-      }
-      ctx.restore();
-    }
+    for(var i=0;i<g.vine.length;i++){var v=g.vine[i];if(v.t>bloom)break;pts.push({x:sx+(ex-sx)*v.t+Math.sin(v.t*4.5)*45*(mob?.5:1),y:sy+(ey-sy)*v.t,t:v.t,bud:v.bud,sz:v.sz,col:v.col});}
+    drawVine(x3,pts,bloom,a);
   })();
 
-  /* ── P4/P5/P6 subtle silhouettes ── */
+  // Vine P4+P5
+  xv.clearRect(0,0,CV.width,CV.height);
   (function(){
-    var ids=['p4','p5','p6'];
-    for(var pi=0;pi<ids.length;pi++){
-      var sp=sP(ids[pi]);
-      var a=Math.min(1,sp*3)*(sp>.92?Math.max(0,1-(sp-.92)*6):1);
-      if(a<0.03)continue;
-      var r=pRect(ids[pi]);
-      ctx.save(); ctx.globalAlpha=a*.1;
-      var rng=sRng(pi*100+7);
-      for(var i=0;i<3+pi;i++){
-        var px=r.x+r.w*(.68+rng()*.28);
-        var py=r.y+r.h*(.1+rng()*.8);
-        var ps=28+rng()*45;
-        var pa=rng()*Math.PI*2;
-        var c=COLS[Math.floor(rng()*COLS.length)];
-        ctx.fillStyle=colStr(c,.5);
-        ctx.save(); ctx.translate(px,py); ctx.rotate(pa);
-        ctx.beginPath(); ctx.ellipse(0,0,ps,ps*.38,0,0,Math.PI*2); ctx.fill();
-        ctx.restore();
-      }
-      ctx.restore();
-    }
+    var p4=document.getElementById('p4'),p5=document.getElementById('p5');
+    var sp4=sP(p4),sp5=sP(p5);
+    var bloom=Math.max(0,Math.min(1,(sp4-.08)/.6));
+    bloom=Math.min(1,bloom+Math.max(0,(sp5-.1)/.5)*.4);
+    var a=Math.min(1,sp4*3)*(sp5>.9?Math.max(0,1-(sp5-.9)*5):1);
+    if(a<.02||bloom<.02)return;
+    drawVine(xv,D.vine.pts,bloom,a);
   })();
 
-  /* ── P7 ── */
+  // P7
+  x7.clearRect(0,0,C7.width,C7.height);
   (function(){
-    var g=G.p7; if(!g)return;
-    var sp=sP('p7');
-    var bloom=Math.max(0,Math.min(1,(sp-.04)/.45));
+    var g=D.p7,sp=sP(document.getElementById('p7'));
+    var bloom=Math.max(0,Math.min(1,(sp-.03)/.45));
     var a=Math.min(1,sp*4);
-    if(a<0.02||bloom<0.02)return;
-    for(var i=0;i<g.f.length;i++){
-      var f=g.f[i];
-      var bl=Math.max(0,Math.min(1,(bloom-f.delay)/.55));
-      if(bl<0.02)continue;
-      var fx=g.cx+f.ox, fy=g.cy+f.oy;
-      if(f.stemL){
-        var sx=fx+Math.cos(f.stemA)*f.stemL;
-        var sy=fy+Math.sin(f.stemA)*f.stemL;
-        stem(fx,fy,sx,sy,bl,a*.5,2);
-      }
-      drawFlower(f.type,fx,fy,f.size,bl,a*.85,f.col);
+    if(a<.02||bloom<.02)return;
+
+    // Floral DEAN wordmark
+    for(var i=0;i<g.deanF.length;i++){
+      var f=g.deanF[i],bl=Math.max(0,Math.min(1,(bloom-f.delay)/.5));
+      if(bl<.02)continue;
+      drawF(x7,f.type,f.x,f.y,f.size,bl,a*.9,f.col);
+    }
+
+    // Garden from bottom
+    for(var i=0;i<g.gardenF.length;i++){
+      var f=g.gardenF[i],bl=Math.max(0,Math.min(1,(bloom-f.delay)/.6));if(bl<.02)continue;
+      var tx=f.bx+f.sway*bl,ty=g.base-f.stemH*bl;
+      drawStem(x7,f.bx,g.base+10,tx,ty,bl,a*.6,2.2);
+      var fb=Math.max(0,(bl-.3)/.7);if(fb>.02)drawF(x7,f.type,tx,ty,f.size,fb,a*.85,f.col);
     }
   })();
 
@@ -914,7 +614,7 @@ function render(){
 }
 requestAnimationFrame(render);
 
-/* ══ NAV / SCROLL ══ */
+/* ══ NAV ══ */
 var panels=['p0','p1','p2','p3','p4','p5','p6','p7'];
 var navLinks=document.querySelectorAll('#sidenav a');
 var sidenav=document.getElementById('sidenav');
@@ -923,16 +623,13 @@ window.addEventListener('scroll',function(){
   var sY=window.scrollY,wH=window.innerHeight;
   sidenav.classList.toggle('vis',sY>wH*.5);
   btt.classList.toggle('vis',sY>wH);
-  var cur=0;
-  panels.forEach(function(id,i){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=wH*.5)cur=i;});
+  var cur=0;panels.forEach(function(id,i){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=wH*.5)cur=i;});
   navLinks.forEach(function(a,i){a.classList.toggle('active',i===cur);});
 });
-
 function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-
 function hBt(){document.getElementById('otherField').style.display=document.getElementById('bt').value==='Other'?'flex':'none';}
 function submitForm(){
   var fn=document.getElementById('fn').value.trim(),ln=document.getElementById('ln').value.trim(),em=document.getElementById('em').value.trim(),ph=document.getElementById('ph').value.trim(),bz=document.getElementById('bz').value.trim(),bt=document.getElementById('bt').value,od=document.getElementById('od').value.trim();
@@ -941,8 +638,7 @@ function submitForm(){
   if(bt==='Other'&&!od){alert('Please describe your business.');return;}
   var btn=document.getElementById('subBtn');btn.disabled=true;btn.textContent='Sending...';
   emailjs.send('service_ufkowjm','template_2wmbmsj',{to_email:'management@deaninformationsystems.com',from_name:'Dean IS Sales',reply_to:em,first_name:fn,last_name:ln,client_email:em,phone:ph,business:bz,biz_type:bt,description:bt==='Other'?od:'N/A'}).then(function(){
-    document.getElementById('contactForm').style.display='none';
-    document.getElementById('formSuccess').style.display='flex';
+    document.getElementById('contactForm').style.display='none';document.getElementById('formSuccess').style.display='flex';
   }).catch(function(err){console.error(err);btn.disabled=false;btn.textContent='Send Message';alert('Something went wrong. Please call us directly at (615) 651-3603.');});
 }
 </script>
